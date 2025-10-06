@@ -5,6 +5,8 @@
 
 Weak gravitational lensing, Leiden documentation
 ================================================
+These notes are present to aid the content covered by Dr Divya Rana in weak gravitational lensing course at the Leiden University.
+
 
 ..  Add your content using ``reStructuredText`` syntax. See the
 ..  `reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
