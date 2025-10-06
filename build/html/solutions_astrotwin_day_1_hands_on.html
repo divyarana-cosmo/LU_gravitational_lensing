@@ -1,30 +1,28 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Day 1 Solutions &mdash; AstroTwinColo_2024 2024 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/nbsphinx-code-cells.css?v=2aa19091" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=172f29ee"></script>
-      <script src="_static/doctools.js?v=888ff710"></script>
-      <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="_static/documentation_options.js?v=6fefd858"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
       <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Day 2 - Finding neighbours" href="astrotwin_day_2_hands_on.html" />
-    <link rel="prev" title="Day 1 - Introduction" href="astrotwin_day_1_hands_on.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -47,18 +45,8 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="astrotwin_day_1_hands_on.html">Day 1 - Introduction</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Day 1 Solutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="astrotwin_day_2_hands_on.html">Day 2 - Finding neighbours</a></li>
-<li class="toctree-l1"><a class="reference internal" href="solutions_astrotwin_day_2_hands_on.html">Day 2 Solutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="astrotwin_day_3_hands_on.html">Day 3 - Get the Weak Lensing Signals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="solutions_astrotwin_day_3_hands_on.html">Day 3 Solutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="astrotwin_day_4_hands_on.html">Day 4 - Model the weak lensing signal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="solutions_astrotwin_day_4_hands_on.html">Day 4 Solutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="astrotwin_day_5_hands_on.html">Day 5 - Environmental dependence of matter profiles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="solutions_astrotwin_day_5_hands_on.html">Day 5 Solutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="solutions_astrotwin_day_5_hands_on.html#modelling-part">modelling part</a></li>
 </ul>
 
         </div>
@@ -86,19 +74,19 @@
            <div itemprop="articleBody">
              
   <section id="Day-1-Solutions">
-<h1>Day 1 Solutions<a class="headerlink" href="#Day-1-Solutions" title="Permalink to this heading"></a></h1>
+<h1>Day 1 Solutions<a class="headerlink" href="#Day-1-Solutions" title="Link to this heading"></a></h1>
 <p>It contains things covered on day-1 of hands on session for weak lensing at AstroTwin Colo 2024.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#loading the required packages</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.dpi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">250</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#loading the required packages
+%matplotlib inline
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+plt.rcParams[&#39;figure.figsize&#39;] = [3,3]
+plt.rcParams[&#39;figure.dpi&#39;] = 250
 </pre></div>
 </div>
 </div>
@@ -106,26 +94,26 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#putting the path of the lens catalog</span>
-<span class="n">len_path</span> <span class="o">=</span> <span class="s1">&#39;/home/idies/workspace/Storage/divyar/AstroTwin_Colo_2024/DataStore/redmapper.dat&#39;</span>
-<span class="n">lenses</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">len_path</span><span class="p">,</span> <span class="n">delim_whitespace</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#putting the path of the lens catalog
+len_path = &#39;/home/idies/workspace/Storage/divyar/AstroTwin_Colo_2024/DataStore/redmapper.dat&#39;
+lenses = pd.read_csv(len_path, delim_whitespace=1)
 
-<span class="c1">#printing the columns in the file</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">lenses</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+#printing the columns in the file
+print(lenses.keys())
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lenses</span><span class="p">[</span><span class="s1">&#39;ra&#39;</span><span class="p">],</span> <span class="n">lenses</span><span class="p">[</span><span class="s1">&#39;dec&#39;</span><span class="p">],</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+plt.plot(lenses[&#39;ra&#39;], lenses[&#39;dec&#39;], &#39;.&#39;, ms=1.0)
 
-<span class="kn">from</span> <span class="nn">glob</span> <span class="kn">import</span> <span class="n">glob</span>
-<span class="c1"># we have given you many many files for sources, below code will capture a list of path for the files</span>
-<span class="c1"># It looks for the file ending &#39;.dat&#39;</span>
-<span class="n">sflist</span> <span class="o">=</span> <span class="n">glob</span><span class="p">(</span><span class="s1">&#39;/home/idies/workspace/Storage/divyar/AstroTwin_Colo_2024/DataStore/hsc/*.dat&#39;</span><span class="p">)</span>
+from glob import glob
+# we have given you many many files for sources, below code will capture a list of path for the files
+# It looks for the file ending &#39;.dat&#39;
+sflist = glob(&#39;/home/idies/workspace/Storage/divyar/AstroTwin_Colo_2024/DataStore/hsc/*.dat&#39;)
 
-<span class="k">for</span> <span class="n">fil</span> <span class="ow">in</span> <span class="n">sflist</span><span class="p">:</span>
-    <span class="n">src</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">fil</span><span class="p">,</span> <span class="n">delim_whitespace</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">src</span><span class="p">[</span><span class="s1">&#39;ragal&#39;</span><span class="p">],</span> <span class="n">src</span><span class="p">[</span><span class="s1">&#39;decgal&#39;</span><span class="p">],</span> <span class="s1">&#39;g.&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;RA  (deg)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;DEC (deg)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Blue = SDSS, Green = HSC&#39;</span><span class="p">)</span>
+for fil in sflist:
+    src = pd.read_csv(fil, delim_whitespace=1)
+    plt.plot(src[&#39;ragal&#39;], src[&#39;decgal&#39;], &#39;g.&#39;, ms=1.0)
+plt.xlabel(&#39;RA  (deg)&#39;)
+plt.ylabel(&#39;DEC (deg)&#39;)
+plt.title(&#39;Blue = SDSS, Green = HSC&#39;)
 </pre></div>
 </div>
 </div>
@@ -157,10 +145,10 @@ Text(0.5, 1.0, &#39;Blue = SDSS, Green = HSC&#39;)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># column names in source data files</span>
-<span class="c1">#print(sflist[0])</span>
-<span class="n">src</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">sflist</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">delim_whitespace</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">src</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># column names in source data files
+#print(sflist[0])
+src = pd.read_csv(sflist[0], delim_whitespace=1)
+src.keys()
 </pre></div>
 </div>
 </div>
@@ -179,10 +167,10 @@ Index([&#39;ragal&#39;, &#39;decgal&#39;, &#39;e1gal&#39;, &#39;e2gal&#39;, &#39
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><br/><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lenses</span><span class="p">[</span><span class="s1">&#39;zred&#39;</span><span class="p">],</span> <span class="n">lenses</span><span class="p">[</span><span class="s1">&#39;lambda&#39;</span><span class="p">],</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$z_{\rm red}$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\lambda$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">150</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><br/><span></span>plt.plot(lenses[&#39;zred&#39;], lenses[&#39;lambda&#39;], &#39;.&#39;, ms=1.0)
+plt.xlabel(r&#39;$z_{\rm red}$&#39;)
+plt.ylabel(r&#39;$\lambda$&#39;)
+plt.ylim(10,150)
 </pre></div>
 </div>
 </div>
@@ -206,26 +194,26 @@ Index([&#39;ragal&#39;, &#39;decgal&#39;, &#39;e1gal&#39;, &#39;e2gal&#39;, &#39
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#visualizing the individual selection cuts</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#visualizing the individual selection cuts
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lenses</span><span class="p">[</span><span class="s1">&#39;zred&#39;</span><span class="p">],</span> <span class="n">lenses</span><span class="p">[</span><span class="s1">&#39;lambda&#39;</span><span class="p">],</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.33</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="mi">20</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.33</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="mi">30</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.33</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="mi">40</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.33</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="mi">55</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.33</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="mi">100</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="s1">&#39;r-&#39;</span><span class="p">)</span>
+plt.plot(lenses[&#39;zred&#39;], lenses[&#39;lambda&#39;], &#39;.&#39;, ms=1.0)
+plt.plot(np.linspace(0.1,0.33,10),20*np.ones(10) , &#39;r-&#39;)
+plt.plot(np.linspace(0.1,0.33,10),30*np.ones(10) , &#39;r-&#39;)
+plt.plot(np.linspace(0.1,0.33,10),40*np.ones(10) , &#39;r-&#39;)
+plt.plot(np.linspace(0.1,0.33,10),55*np.ones(10) , &#39;r-&#39;)
+plt.plot(np.linspace(0.1,0.33,10),100*np.ones(10), &#39;r-&#39;)
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mf">0.1</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="p">,</span>  <span class="s1">&#39;r-&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mf">0.33</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">)</span>
+plt.plot(0.1*np.ones(10), np.linspace(20,100,10) ,  &#39;r-&#39;)
+plt.plot(0.33*np.ones(10), np.linspace(20,100,10) , &#39;r-&#39;)
 
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$z_{\rm red}$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\lambda$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">150</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+plt.xlabel(r&#39;$z_{\rm red}$&#39;)
+plt.ylabel(r&#39;$\lambda$&#39;)
+plt.ylim(15,150)
+plt.yscale(&#39;log&#39;)
 
-<span class="c1">#printing the number of lenses in a selection cut</span>
-<span class="n">idx</span> <span class="o">=</span> <span class="p">(</span><span class="n">lenses</span><span class="p">[</span><span class="s1">&#39;zred&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mf">0.1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">lenses</span><span class="p">[</span><span class="s1">&#39;zred&#39;</span><span class="p">]</span><span class="o">&lt;</span><span class="mf">0.33</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">lenses</span><span class="p">[</span><span class="s1">&#39;lambda&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">25</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">lenses</span><span class="p">[</span><span class="s1">&#39;lambda&#39;</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">40</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;no of bins in first selection cut : </span><span class="si">%d</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">np</span>.sum(idx))
+#printing the number of lenses in a selection cut
+idx = (lenses[&#39;zred&#39;]&gt;0.1) &amp; (lenses[&#39;zred&#39;]&lt;0.33) &amp; (lenses[&#39;lambda&#39;]&gt;25) &amp; (lenses[&#39;lambda&#39;]&lt;40)
+print(&#39;no of bins in first selection cut : %d&#39;%np.sum(idx))
 </pre></div>
 </div>
 </div>
@@ -248,7 +236,7 @@ no of bins in first selection cut : 3642
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="kn">import</span> <span class="n">FlatLambdaCDM</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from astropy.cosmology import FlatLambdaCDM
 </pre></div>
 </div>
 </div>
@@ -256,12 +244,12 @@ no of bins in first selection cut : 3642
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cc</span> <span class="o">=</span> <span class="n">FlatLambdaCDM</span><span class="p">(</span><span class="n">H0</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">Om0</span><span class="o">=</span><span class="mf">0.315</span><span class="p">)</span> <span class="c1"># H0=100 so that we can get distance in units of Mpc h-1</span>
-<span class="n">zred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>cc = FlatLambdaCDM(H0=100, Om0=0.315) # H0=100 so that we can get distance in units of Mpc h-1
+zred = np.linspace(0,1,20)
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">zred</span><span class="p">,</span> <span class="n">cc</span><span class="o">.</span><span class="n">comoving_distance</span><span class="p">(</span><span class="n">zred</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$z_{\rm red}$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$d_{\rm com} {\rm [h^{-1}Mpc]}$&#39;</span><span class="p">)</span>
+plt.plot(zred, cc.comoving_distance(zred))
+plt.xlabel(r&#39;$z_{\rm red}$&#39;)
+plt.ylabel(r&#39;$d_{\rm com} {\rm [h^{-1}Mpc]}$&#39;)
 </pre></div>
 </div>
 </div>
@@ -285,14 +273,14 @@ Text(0, 0.5, &#39;$d_{\\rm com} {\\rm [h^{-1}Mpc]}$&#39;)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Om0</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.8</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>Om0 = [0.1,0.3,0.8]
 
-<span class="k">for</span> <span class="n">omg</span> <span class="ow">in</span> <span class="n">Om0</span><span class="p">:</span>
-    <span class="n">cc</span> <span class="o">=</span> <span class="n">FlatLambdaCDM</span><span class="p">(</span><span class="n">H0</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">Om0</span><span class="o">=</span><span class="n">omg</span><span class="p">)</span> <span class="c1"># H0=100 so that we can get distance in units of Mpc h-1</span>
-    <span class="n">zred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">zred</span><span class="p">,</span> <span class="n">cc</span><span class="o">.</span><span class="n">angular_diameter_distance</span><span class="p">(</span><span class="n">zred</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\Omega_m$ = </span><span class="si">%2.2f</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">omg</span>)
+for omg in Om0:
+    cc = FlatLambdaCDM(H0=100, Om0=omg) # H0=100 so that we can get distance in units of Mpc h-1
+    zred = np.linspace(0,8,100)
+    plt.plot(zred, cc.angular_diameter_distance(zred), label=r&#39;$\Omega_m$ = %2.2f&#39;%omg)
 
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+plt.legend()
 </pre></div>
 </div>
 </div>
@@ -300,8 +288,8 @@ Text(0, 0.5, &#39;$d_{\\rm com} {\\rm [h^{-1}Mpc]}$&#39;)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$z_{\rm red}$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$d_{\rm ang} {\rm [h^{-1}Mpc]}$&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>plt.xlabel(r&#39;$z_{\rm red}$&#39;)
+plt.ylabel(r&#39;$d_{\rm ang} {\rm [h^{-1}Mpc]}$&#39;)
 </pre></div>
 </div>
 </div>
@@ -324,13 +312,13 @@ Text(0, 0.5, &#39;$d_{\\rm ang} {\\rm [h^{-1}Mpc]}$&#39;)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">omg</span> <span class="ow">in</span> <span class="n">Om0</span><span class="p">:</span>
-    <span class="n">cc</span> <span class="o">=</span> <span class="n">FlatLambdaCDM</span><span class="p">(</span><span class="n">H0</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">Om0</span><span class="o">=</span><span class="n">omg</span><span class="p">)</span> <span class="c1"># H0=100 so that we can get distance in units of Mpc h-1</span>
-    <span class="n">zred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">zred</span><span class="p">,</span> <span class="n">cc</span><span class="o">.</span><span class="n">luminosity_distance</span><span class="p">(</span><span class="n">zred</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\Omega_m$ =</span><span class="si">%2.2f</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">omg</span>)
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$z_{\rm red}$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$d_{\rm lum} {\rm [h^{-1}Mpc]}$&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>for omg in Om0:
+    cc = FlatLambdaCDM(H0=100, Om0=omg) # H0=100 so that we can get distance in units of Mpc h-1
+    zred = np.linspace(0,1,20)
+    plt.plot(zred, cc.luminosity_distance(zred), label=r&#39;$\Omega_m$ =%2.2f&#39;%omg)
+plt.legend()
+plt.xlabel(r&#39;$z_{\rm red}$&#39;)
+plt.ylabel(r&#39;$d_{\rm lum} {\rm [h^{-1}Mpc]}$&#39;)
 </pre></div>
 </div>
 </div>
@@ -363,10 +351,7 @@ Text(0, 0.5, &#39;$d_{\\rm lum} {\\rm [h^{-1}Mpc]}$&#39;)
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="astrotwin_day_1_hands_on.html" class="btn btn-neutral float-left" title="Day 1 - Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="astrotwin_day_2_hands_on.html" class="btn btn-neutral float-right" title="Day 2 - Finding neighbours" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 

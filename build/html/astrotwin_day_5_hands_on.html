@@ -1,30 +1,28 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Day 5 - Environmental dependence of matter profiles &mdash; AstroTwinColo_2024 2024 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/nbsphinx-code-cells.css?v=2aa19091" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=172f29ee"></script>
-      <script src="_static/doctools.js?v=888ff710"></script>
-      <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="_static/documentation_options.js?v=6fefd858"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
       <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Day 5 Solutions" href="solutions_astrotwin_day_5_hands_on.html" />
-    <link rel="prev" title="Day 4 Solutions" href="solutions_astrotwin_day_4_hands_on.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -47,21 +45,8 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="astrotwin_day_1_hands_on.html">Day 1 - Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="solutions_astrotwin_day_1_hands_on.html">Day 1 Solutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="astrotwin_day_2_hands_on.html">Day 2 - Finding neighbours</a></li>
-<li class="toctree-l1"><a class="reference internal" href="solutions_astrotwin_day_2_hands_on.html">Day 2 Solutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="astrotwin_day_3_hands_on.html">Day 3 - Get the Weak Lensing Signals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="solutions_astrotwin_day_3_hands_on.html">Day 3 Solutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="astrotwin_day_4_hands_on.html">Day 4 - Model the weak lensing signal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="solutions_astrotwin_day_4_hands_on.html">Day 4 Solutions</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Day 5 - Environmental dependence of matter profiles</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#Lets-first-make-a-scatter-plot">Lets first make a scatter plot</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="solutions_astrotwin_day_5_hands_on.html">Day 5 Solutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="solutions_astrotwin_day_5_hands_on.html#modelling-part">modelling part</a></li>
 </ul>
 
         </div>
@@ -89,11 +74,11 @@
            <div itemprop="articleBody">
              
   <section id="Day-5---Environmental-dependence-of-matter-profiles">
-<h1>Day 5 - Environmental dependence of matter profiles<a class="headerlink" href="#Day-5---Environmental-dependence-of-matter-profiles" title="Permalink to this heading"></a></h1>
+<h1>Day 5 - Environmental dependence of matter profiles<a class="headerlink" href="#Day-5---Environmental-dependence-of-matter-profiles" title="Link to this heading"></a></h1>
 <p>In this session, we will study the weak lensing signal around the satellite galaxies in a cluster environment. We will first make some scatter plots and decide on the selection criteria for our satellite galaxies. As before, we will then use them as lenses and measure the weak-lensing signal around them.</p>
 <p>The catalog data is available by the name “redmapper_satellites.dat”</p>
 <section id="Lets-first-make-a-scatter-plot">
-<h2>Lets first make a scatter plot<a class="headerlink" href="#Lets-first-make-a-scatter-plot" title="Permalink to this heading"></a></h2>
+<h2>Lets first make a scatter plot<a class="headerlink" href="#Lets-first-make-a-scatter-plot" title="Link to this heading"></a></h2>
 <p>Here we will make the plot between redshift and projected separation of satellite from the cluster center. We will then select the sample using the cuts on the separation.</p>
 <ul class="simple">
 <li><p><strong>lenses: /home/idies/workspace/Storage/divyar/AstroTwin_Colo_2024/DataStore/redmapper_satellites.dat</strong></p></li>
@@ -102,15 +87,15 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#loading the required packages</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#loading the required packages
+%matplotlib inline
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
 
-<span class="c1"># we are setting the below params to adjust plots</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.dpi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">250</span>
+# we are setting the below params to adjust plots
+plt.rcParams[&#39;figure.figsize&#39;] = [3,3]
+plt.rcParams[&#39;figure.dpi&#39;] = 250
 </pre></div>
 </div>
 </div>
@@ -118,25 +103,25 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#putting the path of the lens catalog</span>
-<span class="n">len_path</span> <span class="o">=</span> <span class="s1">&#39;/home/idies/workspace/Storage/divyar/AstroTwin_Colo_2024/DataStore/redmapper_satellites.dat&#39;</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#putting the path of the lens catalog
+len_path = &#39;/home/idies/workspace/Storage/divyar/AstroTwin_Colo_2024/DataStore/redmapper_satellites.dat&#39;
 
-<span class="n">lenses</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">len_path</span><span class="p">,</span> <span class="n">delim_whitespace</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+lenses = pd.read_csv(len_path, delim_whitespace=1)
 
-<span class="c1">#printing the columns in the file</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">lenses</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lenses</span><span class="p">[</span><span class="s1">&#39;zred&#39;</span><span class="p">],</span> <span class="n">lenses</span><span class="p">[</span><span class="s1">&#39;rsep[h-1Mpc]&#39;</span><span class="p">],</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.33</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="mf">0.1</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.33</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="mf">0.4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mf">0.1</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.4</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="p">,</span>  <span class="s1">&#39;r-&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mf">0.33</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.4</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">)</span>
+#printing the columns in the file
+print(lenses.keys())
+plt.plot(lenses[&#39;zred&#39;], lenses[&#39;rsep[h-1Mpc]&#39;], &#39;.&#39;, ms=0.1)
+plt.plot(np.linspace(0.1,0.33,10),0.1*np.ones(10) , &#39;r-&#39;)
+plt.plot(np.linspace(0.1,0.33,10),0.4*np.ones(10) , &#39;r-&#39;)
+plt.plot(0.1*np.ones(10), np.linspace(0.1,0.4,10) ,  &#39;r-&#39;)
+plt.plot(0.33*np.ones(10), np.linspace(0.1,0.4,10) , &#39;r-&#39;)
 
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$z_{\rm red}$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$R_{\rm sep} [h^{-1} Mpc]$&#39;</span><span class="p">)</span>
+plt.xlabel(r&#39;$z_{\rm red}$&#39;)
+plt.ylabel(r&#39;$R_{\rm sep} [h^{-1} Mpc]$&#39;)
 
-<span class="c1">#printing the number of lenses in a selection cut</span>
-<span class="n">idx</span> <span class="o">=</span> <span class="p">(</span><span class="n">lenses</span><span class="p">[</span><span class="s1">&#39;zred&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mf">0.1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">lenses</span><span class="p">[</span><span class="s1">&#39;zred&#39;</span><span class="p">]</span><span class="o">&lt;</span><span class="mf">0.33</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">lenses</span><span class="p">[</span><span class="s1">&#39;rsep[h-1Mpc]&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mf">0.1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">lenses</span><span class="p">[</span><span class="s1">&#39;rsep[h-1Mpc]&#39;</span><span class="p">]</span><span class="o">&lt;</span><span class="mf">0.4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;no of bins in first selection cut : </span><span class="si">%d</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">np</span>.sum(idx))
+#printing the number of lenses in a selection cut
+idx = (lenses[&#39;zred&#39;]&gt;0.1) &amp; (lenses[&#39;zred&#39;]&lt;0.33) &amp; (lenses[&#39;rsep[h-1Mpc]&#39;]&gt;0.1) &amp; (lenses[&#39;rsep[h-1Mpc]&#39;]&lt;0.4)
+print(&#39;no of bins in first selection cut : %d&#39;%np.sum(idx))
 </pre></div>
 </div>
 </div>
@@ -186,10 +171,7 @@ no of bins in first selection cut : 51215
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="solutions_astrotwin_day_4_hands_on.html" class="btn btn-neutral float-left" title="Day 4 Solutions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="solutions_astrotwin_day_5_hands_on.html" class="btn btn-neutral float-right" title="Day 5 Solutions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 

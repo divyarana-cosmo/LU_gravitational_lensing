@@ -1,30 +1,28 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Day 2 Solutions &mdash; AstroTwinColo_2024 2024 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/nbsphinx-code-cells.css?v=2aa19091" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=172f29ee"></script>
-      <script src="_static/doctools.js?v=888ff710"></script>
-      <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="_static/documentation_options.js?v=6fefd858"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
       <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Day 3 - Get the Weak Lensing Signals" href="astrotwin_day_3_hands_on.html" />
-    <link rel="prev" title="Day 2 - Finding neighbours" href="astrotwin_day_2_hands_on.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -47,35 +45,8 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="astrotwin_day_1_hands_on.html">Day 1 - Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="solutions_astrotwin_day_1_hands_on.html">Day 1 Solutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="astrotwin_day_2_hands_on.html">Day 2 - Finding neighbours</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Day 2 Solutions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#Reading-the-lens/source-catalog">Reading the lens/source catalog</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Visualising-the-coordinate-space-of-input-data">Visualising the coordinate space of input data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#On-sky-distance-between-two-points-on-the-surface-of-a-unit-sphere"><code class="docutils literal notranslate"><span class="pre">On-sky</span> <span class="pre">distance</span></code> between two points on the surface of a unit sphere</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Brute-force-search-for-neighbour-objects-within-a-specified-distance">Brute force search for neighbour objects within a specified distance</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Testing-the-above-brute-force-search-functions">Testing the above <code class="docutils literal notranslate"><span class="pre">brute</span> <span class="pre">force</span> <span class="pre">search</span></code> functions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#A-visual-sanity-check-for-execution-of-find_neighbour_points-function">A visual sanity check for execution of <code class="docutils literal notranslate"><span class="pre">find_neighbour_points</span></code> function</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#Using-k-d-tree-algorithm-to-query-the-neighbour-points-within-a-given-distance">Using k-d tree algorithm to query the neighbour points within a given distance</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#A-sanity-check">A sanity check</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Compare-the-output-of-our-brute-force-algorithm-with-cKDTree-algorithm-on-dew-Demo-objects">Compare the output of our brute force algorithm with cKDTree algorithm on dew Demo objects</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#Compare-the-computer-time-required-by-our-brute-force-algorithm-vs-the-k-d-tree-algorithm">Compare the computer time required by our brute force algorithm vs the k-d tree algorithm</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Congratulations!-Now-you-have-learnt-to--">Congratulations! Now you have learnt to -</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="astrotwin_day_3_hands_on.html">Day 3 - Get the Weak Lensing Signals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="solutions_astrotwin_day_3_hands_on.html">Day 3 Solutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="astrotwin_day_4_hands_on.html">Day 4 - Model the weak lensing signal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="solutions_astrotwin_day_4_hands_on.html">Day 4 Solutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="astrotwin_day_5_hands_on.html">Day 5 - Environmental dependence of matter profiles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="solutions_astrotwin_day_5_hands_on.html">Day 5 Solutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="solutions_astrotwin_day_5_hands_on.html#modelling-part">modelling part</a></li>
 </ul>
 
         </div>
@@ -103,27 +74,27 @@
            <div itemprop="articleBody">
              
   <section id="Day-2-Solutions">
-<h1>Day 2 Solutions<a class="headerlink" href="#Day-2-Solutions" title="Permalink to this heading"></a></h1>
+<h1>Day 2 Solutions<a class="headerlink" href="#Day-2-Solutions" title="Link to this heading"></a></h1>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import pandas as pd
+import numpy as np
+from matplotlib import pyplot as plt
+from time import time
 </pre></div>
 </div>
 </div>
 <section id="Reading-the-lens/source-catalog">
-<h2>Reading the lens/source catalog<a class="headerlink" href="#Reading-the-lens/source-catalog" title="Permalink to this heading"></a></h2>
+<h2>Reading the lens/source catalog<a class="headerlink" href="#Reading-the-lens/source-catalog" title="Link to this heading"></a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">5</span><span class="w"> </span>/home/idies/workspace/Storage/divyar/AstroTwin_Colo_2024/DataStore/demo_objects.csv
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>!head -n 5 /home/idies/workspace/Storage/divyar/AstroTwin_Colo_2024/DataStore/demo_objects.csv
 
-<span class="c1"># !wc -l /home/idies/workspace/Storage/divyar/AstroTwin_Colo_2024/DataStore/demo_objects.csv</span>
+# !wc -l /home/idies/workspace/Storage/divyar/AstroTwin_Colo_2024/DataStore/demo_objects.csv
 </pre></div>
 </div>
 </div>
@@ -143,12 +114,12 @@ ra,dec
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#reading lens file</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#reading lens file
 
-<span class="c1">#tries to read everthing in the file</span>
-<span class="n">path</span><span class="o">=</span><span class="s2">&quot;/home/idies/workspace/Storage/divyar/AstroTwin_Colo_2024/DataStore/demo_objects.csv&quot;</span>
+#tries to read everthing in the file
+path=&quot;/home/idies/workspace/Storage/divyar/AstroTwin_Colo_2024/DataStore/demo_objects.csv&quot;
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+df = pd.read_csv(path, sep=&#39;,&#39;)
 </pre></div>
 </div>
 </div>
@@ -157,7 +128,7 @@ ra,dec
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df = pd.read_csv(path, sep=&#39;,&#39;, usecols=[0,1])
 </pre></div>
 </div>
 </div>
@@ -165,7 +136,7 @@ ra,dec
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df.head()
 </pre></div>
 </div>
 </div>
@@ -228,7 +199,7 @@ ra,dec
 </div>
 </section>
 <section id="Visualising-the-coordinate-space-of-input-data">
-<h2>Visualising the coordinate space of input data<a class="headerlink" href="#Visualising-the-coordinate-space-of-input-data" title="Permalink to this heading"></a></h2>
+<h2>Visualising the coordinate space of input data<a class="headerlink" href="#Visualising-the-coordinate-space-of-input-data" title="Link to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title fa fa-exclamation-circle">Exercise:</p>
 <ul>
@@ -242,29 +213,29 @@ ra,dec
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="n">ax1</span><span class="p">,</span><span class="n">ax2</span> <span class="o">=</span> <span class="n">ax</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig,ax = plt.subplots(1,2, figsize=(14,6))
+ax1,ax2 = ax
 
-<span class="c1">#plot all the coordinates</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="n">df</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;ra (deg)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;dec (deg)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+#plot all the coordinates
+ax1.scatter(df.ra.values,df.dec.values, s=2)
+ax1.set_xlabel(&quot;ra (deg)&quot;, fontsize=14)
+ax1.set_ylabel(&quot;dec (deg)&quot;, fontsize=14)
 
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Plot looks too dense.&quot;</span><span class="p">)</span>
+ax1.set_title(&quot;Plot looks too dense.&quot;)
 
-<span class="c1">#Randomly picking up points to reduce the density of points</span>
-<span class="n">Number_of_points</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">size</span>
-<span class="n">down_sample_by</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="n">random_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">Number_of_points</span><span class="p">),</span>
-                                  <span class="n">size</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">Number_of_points</span><span class="o">/</span><span class="n">down_sample_by</span><span class="p">),</span>
-                                  <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="c1">#plot down sampled number coordinates</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">random_indices</span><span class="p">],</span> <span class="n">df</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">random_indices</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;ra (deg)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;dec (deg)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Density of points reduced by </span><span class="si">%d</span><span class="s2">.&quot;</span><span class="o">%</span><span class="k">down_sample_by</span>)
+#Randomly picking up points to reduce the density of points
+Number_of_points = df.ra.size
+down_sample_by = 100
+random_indices = np.random.choice(np.arange(Number_of_points),
+                                  size=int(Number_of_points/down_sample_by),
+                                  replace=False)
+#plot down sampled number coordinates
+ax2.scatter(df.ra.values[random_indices], df.dec.values[random_indices], s=2)
+ax2.set_xlabel(&quot;ra (deg)&quot;, fontsize=14)
+ax2.set_ylabel(&quot;dec (deg)&quot;, fontsize=14)
+ax2.set_title(&quot;Density of points reduced by %d.&quot;%down_sample_by)
 
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+plt.show()
 </pre></div>
 </div>
 </div>
@@ -277,7 +248,7 @@ ra,dec
 </div>
 </section>
 <section id="On-sky-distance-between-two-points-on-the-surface-of-a-unit-sphere">
-<h2><code class="docutils literal notranslate"><span class="pre">On-sky</span> <span class="pre">distance</span></code> between two points on the surface of a unit sphere<a class="headerlink" href="#On-sky-distance-between-two-points-on-the-surface-of-a-unit-sphere" title="Permalink to this heading"></a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">On-sky</span> <span class="pre">distance</span></code> between two points on the surface of a unit sphere<a class="headerlink" href="#On-sky-distance-between-two-points-on-the-surface-of-a-unit-sphere" title="Link to this heading"></a></h2>
 <p>Given the spherical coordinate system, we can express the points in as</p>
 <p><span class="math notranslate nohighlight">\(\vec{r_i} = r_i \cdot (\sin(90 -\delta_i) \cos\alpha_i \ \hat{x}+ \sin(90 -\delta_i) \sin\alpha_i \ \hat{y} + \cos(90 -\delta_i) \ \hat{z})\)</span>, <span class="math notranslate nohighlight">\(\hspace{0.2cm}\)</span>for <span class="math notranslate nohighlight">\(\mathrm{i \in (1,2)}\)</span>. Here <span class="math notranslate nohighlight">\(\alpha_i\)</span> and <span class="math notranslate nohighlight">\(\delta_i\)</span> are the right ascension and declination for <span class="math notranslate nohighlight">\(i^{\rm th}\)</span> point.</p>
 <p>We will first compute the cosine of the angle <span class="math notranslate nohighlight">\(\theta\)</span> between the points using :</p>
@@ -298,28 +269,28 @@ ra,dec
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rad_to_arcsec</span> <span class="o">=</span> <span class="mf">180.0</span><span class="o">*</span><span class="mf">3600.</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
-<span class="n">arcsec_to_rad</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">rad_to_arcsec</span>
-<span class="n">deg_to_rad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">180.</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>rad_to_arcsec = 180.0*3600./np.pi
+arcsec_to_rad = 1/rad_to_arcsec
+deg_to_rad = np.pi/180.
 
-<span class="k">def</span> <span class="nf">dist_betw_two_obj</span><span class="p">(</span><span class="n">obj1</span><span class="p">,</span><span class="n">obj2</span><span class="p">):</span>
-    <span class="n">ra1</span><span class="p">,</span><span class="n">dec1</span> <span class="o">=</span> <span class="n">obj1</span>
-    <span class="n">ra2</span><span class="p">,</span><span class="n">dec2</span> <span class="o">=</span> <span class="n">obj2</span>
-    <span class="c1">#convert angles from degree to radians</span>
-    <span class="n">ra1</span>  <span class="o">=</span> <span class="n">ra1</span>  <span class="o">*</span> <span class="n">deg_to_rad</span>
-    <span class="n">ra2</span>  <span class="o">=</span> <span class="n">ra2</span>  <span class="o">*</span> <span class="n">deg_to_rad</span>
-    <span class="n">dec1</span> <span class="o">=</span> <span class="n">dec1</span> <span class="o">*</span> <span class="n">deg_to_rad</span>
-    <span class="n">dec2</span> <span class="o">=</span> <span class="n">dec2</span> <span class="o">*</span> <span class="n">deg_to_rad</span>
+def dist_betw_two_obj(obj1,obj2):
+    ra1,dec1 = obj1
+    ra2,dec2 = obj2
+    #convert angles from degree to radians
+    ra1  = ra1  * deg_to_rad
+    ra2  = ra2  * deg_to_rad
+    dec1 = dec1 * deg_to_rad
+    dec2 = dec2 * deg_to_rad
 
-    <span class="c1">#calculate the distance in arcsec</span>
-    <span class="n">psi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">dec2</span><span class="p">)</span><span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">dec1</span><span class="p">)</span><span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">ra1</span><span class="o">-</span><span class="n">ra2</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">dec1</span><span class="p">)</span><span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">dec2</span><span class="p">)</span>
+    #calculate the distance in arcsec
+    psi = np.cos(dec2)* np.cos(dec1)* np.cos(ra1-ra2) + np.sin(dec1)* np.sin(dec2)
 
-    <span class="c1">#due to precision errors, sometimes psi &gt; 1 , e.g. 1.0000000000000000000001</span>
-    <span class="c1">#in such a case np.arccos funciton will complaint. So handle that now.</span>
-    <span class="n">psi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">psi</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    #due to precision errors, sometimes psi &gt; 1 , e.g. 1.0000000000000000000001
+    #in such a case np.arccos funciton will complaint. So handle that now.
+    psi = np.clip(psi,-1,1)
 
-    <span class="n">dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arccos</span><span class="p">(</span><span class="n">psi</span><span class="p">)</span><span class="o">*</span> <span class="n">rad_to_arcsec</span>
-    <span class="k">return</span> <span class="n">dist</span>
+    dist = np.arccos(psi)* rad_to_arcsec
+    return dist
 <br/></pre></div>
 </div>
 </div>
@@ -328,9 +299,9 @@ ra,dec
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># creating tuple of values from ra,dec of each object</span>
-<span class="n">coords</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span> <span class="nb">zip</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="n">df</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">values</span><span class="p">))</span>
-<span class="c1"># print(coords[0])</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># creating tuple of values from ra,dec of each object
+coords = list( zip(df.ra.values,df.dec.values))
+# print(coords[0])
 </pre></div>
 </div>
 </div>
@@ -338,9 +309,9 @@ ra,dec
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;obj1 0: </span><span class="si">{</span><span class="n">coords</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span>
-<span class="s2">obj2 1: </span><span class="si">{</span><span class="n">coords</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span>
-<span class="s2">distance: </span><span class="si">{</span><span class="n">dist_betw_two_obj</span><span class="p">(</span><span class="n">coords</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">coords</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="si">}</span><span class="s2"> arcsec&quot;&quot;&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print( f&quot;&quot;&quot;obj1 0: {coords[0]}
+obj2 1: {coords[1]}
+distance: {dist_betw_two_obj(coords[0],coords[1])} arcsec&quot;&quot;&quot;)
 </pre></div>
 </div>
 </div>
@@ -356,7 +327,7 @@ distance: 23.7466131834144 arcsec
 </div>
 </section>
 <section id="Brute-force-search-for-neighbour-objects-within-a-specified-distance">
-<h2>Brute force search for neighbour objects within a specified distance<a class="headerlink" href="#Brute-force-search-for-neighbour-objects-within-a-specified-distance" title="Permalink to this heading"></a></h2>
+<h2>Brute force search for neighbour objects within a specified distance<a class="headerlink" href="#Brute-force-search-for-neighbour-objects-within-a-specified-distance" title="Link to this heading"></a></h2>
 <p>time complexity ~ <span class="math notranslate nohighlight">\(\mathcal{O}(n^2)\)</span></p>
 <div class="admonition note">
 <p class="admonition-title fa fa-exclamation-circle">Exercise:</p>
@@ -381,68 +352,68 @@ distance: 23.7466131834144 arcsec
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from collections import defaultdict
 
-<span class="k">def</span> <span class="nf">find_neighbour_points</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">rmax</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    finding neighbour objects within some distance, for all the objects in a given array of coordinates.</span>
+def find_neighbour_points(coords, rmax=10, verbose=True):
+    &quot;&quot;&quot;
+    finding neighbour objects within some distance, for all the objects in a given array of coordinates.
 
-<span class="sd">    coords: an array/list of tuples (ra,dec)</span>
+    coords: an array/list of tuples (ra,dec)
 
-<span class="sd">    Returns:</span>
-<span class="sd">    `nnids`: indices into `coords` of neighbours of each object in `coords` within `rmax`</span>
-<span class="sd">    `distances`: distance of objects matched in `nnids&quot;&quot;&quot;</span>
+    Returns:
+    `nnids`: indices into `coords` of neighbours of each object in `coords` within `rmax`
+    `distances`: distance of objects matched in `nnids&quot;&quot;&quot;
 
-    <span class="c1"># define containers for the distance and id information of matched objects</span>
-    <span class="n">distances</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
-    <span class="n">nnids</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+    # define containers for the distance and id information of matched objects
+    distances = defaultdict(list)
+    nnids = defaultdict(list)
 
-    <span class="n">c</span><span class="o">=</span><span class="mi">0</span>
-    <span class="k">for</span> <span class="n">ii</span><span class="p">,</span><span class="n">obj1</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">coords</span><span class="p">):</span>
-        <span class="n">c</span><span class="o">+=</span><span class="mi">1</span>
-        <span class="n">d</span><span class="o">=</span><span class="mi">0</span>
-        <span class="k">for</span> <span class="n">jj</span><span class="p">,</span><span class="n">obj2</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">coords</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">jj</span><span class="o">==</span><span class="n">ii</span><span class="p">:</span>
-                <span class="k">continue</span>
-            <span class="n">d</span><span class="o">+=</span><span class="mi">1</span>
-            <span class="n">dist</span> <span class="o">=</span> <span class="n">dist_betw_two_obj</span><span class="p">(</span><span class="n">obj1</span><span class="p">,</span><span class="n">obj2</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">dist</span> <span class="o">&lt;=</span> <span class="n">rmax</span><span class="p">:</span>
-                <span class="n">nnids</span><span class="p">[</span><span class="n">ii</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">jj</span><span class="p">)</span>
-                <span class="n">distances</span><span class="p">[</span><span class="n">ii</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dist</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">ii</span><span class="p">,</span><span class="n">nnids</span><span class="p">[</span><span class="n">ii</span><span class="p">],</span><span class="n">distances</span><span class="p">[</span><span class="n">ii</span><span class="p">])</span>
-    <span class="k">return</span> <span class="n">nnids</span><span class="p">,</span><span class="n">distances</span>
+    c=0
+    for ii,obj1 in enumerate(coords):
+        c+=1
+        d=0
+        for jj,obj2 in enumerate(coords):
+            if jj==ii:
+                continue
+            d+=1
+            dist = dist_betw_two_obj(obj1,obj2)
+            if dist &lt;= rmax:
+                nnids[ii].append(jj)
+                distances[ii].append(dist)
+        if verbose:
+            print(ii,nnids[ii],distances[ii])
+    return nnids,distances
 
-<span class="k">def</span> <span class="nf">query_neighbour_points</span><span class="p">(</span><span class="n">coords1</span><span class="p">,</span> <span class="n">coords2</span><span class="p">,</span> <span class="n">rmax</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    coords1: a tuple or an array/list of tuples (ra,dec)</span>
-<span class="sd">    coords2: an array/list of tuples (ra,dec)</span>
+def query_neighbour_points(coords1, coords2, rmax=10, verbose=True):
+    &quot;&quot;&quot;
+    coords1: a tuple or an array/list of tuples (ra,dec)
+    coords2: an array/list of tuples (ra,dec)
 
-<span class="sd">    Returns:</span>
-<span class="sd">    `nnids`: indices into `coords2` of neighbours of each object `coords1` within `rmax`.</span>
-<span class="sd">    `distances`: distance of objects matched in `nnids`&quot;&quot;&quot;</span>
+    Returns:
+    `nnids`: indices into `coords2` of neighbours of each object `coords1` within `rmax`.
+    `distances`: distance of objects matched in `nnids`&quot;&quot;&quot;
 
-    <span class="n">coords1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">coords1</span><span class="p">)</span>
+    coords1 = np.atleast_2d(coords1)
 
-    <span class="c1"># define containers for the distance and id information of matched objects</span>
-    <span class="n">distances</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
-    <span class="n">nnids</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+    # define containers for the distance and id information of matched objects
+    distances = defaultdict(list)
+    nnids = defaultdict(list)
 
-    <span class="k">for</span> <span class="n">ii</span><span class="p">,</span><span class="n">obj1</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">coords1</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">jj</span><span class="p">,</span><span class="n">obj2</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">coords2</span><span class="p">):</span>
-            <span class="n">dist</span> <span class="o">=</span> <span class="n">dist_betw_two_obj</span><span class="p">(</span><span class="n">obj1</span><span class="p">,</span><span class="n">obj2</span><span class="p">)</span>
-            <span class="k">if</span> <span class="mi">0</span><span class="o">&lt;=</span><span class="n">dist</span> <span class="o">&lt;=</span> <span class="n">rmax</span><span class="p">:</span>
-                <span class="n">nnids</span><span class="p">[</span><span class="n">ii</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">jj</span><span class="p">)</span>
-                <span class="n">distances</span><span class="p">[</span><span class="n">ii</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dist</span><span class="p">)</span>
-                <span class="c1">#print(obj1, obj2, ii,dist)</span>
-        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">ii</span><span class="p">,</span><span class="n">nnids</span><span class="p">[</span><span class="n">ii</span><span class="p">],</span><span class="n">distances</span><span class="p">[</span><span class="n">ii</span><span class="p">])</span>
-    <span class="k">return</span> <span class="n">nnids</span><span class="p">,</span><span class="n">distances</span>
+    for ii,obj1 in enumerate(coords1):
+        for jj,obj2 in enumerate(coords2):
+            dist = dist_betw_two_obj(obj1,obj2)
+            if 0&lt;=dist &lt;= rmax:
+                nnids[ii].append(jj)
+                distances[ii].append(dist)
+                #print(obj1, obj2, ii,dist)
+        if verbose:
+            print(ii,nnids[ii],distances[ii])
+    return nnids,distances
 </pre></div>
 </div>
 </div>
 <section id="Testing-the-above-brute-force-search-functions">
-<h3>Testing the above <code class="docutils literal notranslate"><span class="pre">brute</span> <span class="pre">force</span> <span class="pre">search</span></code> functions<a class="headerlink" href="#Testing-the-above-brute-force-search-functions" title="Permalink to this heading"></a></h3>
+<h3>Testing the above <code class="docutils literal notranslate"><span class="pre">brute</span> <span class="pre">force</span> <span class="pre">search</span></code> functions<a class="headerlink" href="#Testing-the-above-brute-force-search-functions" title="Link to this heading"></a></h3>
 <div class="admonition note">
 <p class="admonition-title fa fa-exclamation-circle">Exercise:</p>
 <ul>
@@ -457,10 +428,10 @@ distance: 23.7466131834144 arcsec
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Running and testing find_neighbour_points</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Running and testing find_neighbour_points
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;object index, neighbours indices list, neighbours distances list &quot;</span><span class="p">)</span>
-<span class="o">%</span><span class="k">time</span> nnids,distances = find_neighbour_points(coords[:50],rmax=15)
+print(&quot;object index, neighbours indices list, neighbours distances list &quot;)
+%time nnids,distances = find_neighbour_points(coords[:50],rmax=15)
 </pre></div>
 </div>
 </div>
@@ -528,15 +499,15 @@ Wall time: 312 ms
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Running and testing query_neighbour_points</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;object index, neighbours indices list, neighbours distances list &quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Running and testing query_neighbour_points
+print(&quot;object index, neighbours indices list, neighbours distances list &quot;)
 
-<span class="c1"># Remember because I have passed same object catalog as coords and coords2,</span>
-<span class="c1"># you are seeing same objects matched with each other. So if you ignore the same</span>
-<span class="c1"># matches, you&#39;ll notice that the printed neighbours are exactly the same as shown in</span>
-<span class="c1"># the above cell.</span>
+# Remember because I have passed same object catalog as coords and coords2,
+# you are seeing same objects matched with each other. So if you ignore the same
+# matches, you&#39;ll notice that the printed neighbours are exactly the same as shown in
+# the above cell.
 
-<span class="o">%</span><span class="k">time</span> nnidss,distancess = query_neighbour_points(coords1=coords[:50],coords2=coords[:50],rmax=15)
+%time nnidss,distancess = query_neighbour_points(coords1=coords[:50],coords2=coords[:50],rmax=15)
 </pre></div>
 </div>
 </div>
@@ -604,20 +575,20 @@ Wall time: 351 ms
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nth</span> <span class="o">=</span> <span class="mi">15</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>nth = 15
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Using result of find_neighbour_points :&quot;</span><span class="p">)</span>
+print(&quot;Using result of find_neighbour_points :&quot;)
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;Accessing the neighbour points for the </span><span class="si">{</span><span class="n">nth</span><span class="si">}</span><span class="s2">th object using the output</span>
-<span class="s2">of our brute force method:&quot;&quot;&quot;</span><span class="p">)</span>
+print(f&quot;&quot;&quot;Accessing the neighbour points for the {nth}th object using the output
+of our brute force method:&quot;&quot;&quot;)
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;neighbours: </span><span class="si">{</span><span class="n">nnids</span><span class="p">[</span><span class="n">nth</span><span class="p">]</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">distances: </span><span class="si">{</span><span class="n">distances</span><span class="p">[</span><span class="n">nth</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+print(f&quot;neighbours: {nnids[nth]} \ndistances: {distances[nth]}&quot;)
 
-<span class="nb">print</span><span class="p">()</span>
+print()
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Accessing the neighbour coordinates of the </span><span class="si">{</span><span class="n">nth</span><span class="si">}</span><span class="s2">th object:&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="n">nnids</span><span class="p">[</span><span class="n">nth</span><span class="p">]:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">ii</span><span class="p">,</span> <span class="n">coords</span><span class="p">[</span><span class="n">ii</span><span class="p">])</span>
+print(f&quot;Accessing the neighbour coordinates of the {nth}th object:&quot;)
+for ii in nnids[nth]:
+    print(ii, coords[ii])
 </pre></div>
 </div>
 </div>
@@ -641,7 +612,7 @@ Accessing the neighbour coordinates of the 15th object:
 </section>
 <hr class="docutils" />
 <section id="A-visual-sanity-check-for-execution-of-find_neighbour_points-function">
-<h3>A visual sanity check for execution of <code class="docutils literal notranslate"><span class="pre">find_neighbour_points</span></code> function<a class="headerlink" href="#A-visual-sanity-check-for-execution-of-find_neighbour_points-function" title="Permalink to this heading"></a></h3>
+<h3>A visual sanity check for execution of <code class="docutils literal notranslate"><span class="pre">find_neighbour_points</span></code> function<a class="headerlink" href="#A-visual-sanity-check-for-execution-of-find_neighbour_points-function" title="Link to this heading"></a></h3>
 <div class="admonition note">
 <p class="admonition-title fa fa-exclamation-circle">Exercise:</p>
 <ul class="simple">
@@ -655,39 +626,39 @@ Accessing the neighbour coordinates of the 15th object:
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[48]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">demoid</span> <span class="o">=</span> <span class="mi">15</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>demoid = 15
 
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="c1">#plot demo point</span>
-<span class="n">demora</span><span class="p">,</span><span class="n">demodec</span>  <span class="o">=</span> <span class="n">coords</span><span class="p">[</span><span class="n">demoid</span><span class="p">]</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">demora</span><span class="p">,</span><span class="n">demodec</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
+plt.figure(figsize=(8,6))
+#plot demo point
+demora,demodec  = coords[demoid]
+plt.scatter(demora,demodec, c=&#39;black&#39;, s=100, marker=r&#39;*&#39;)
 
-<span class="c1">#access all the neighbours</span>
-<span class="n">coords</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">coords</span><span class="p">)</span>
-<span class="n">neighbours</span> <span class="o">=</span> <span class="n">nnids</span><span class="p">[</span><span class="n">demoid</span><span class="p">]</span>
+#access all the neighbours
+coords=np.array(coords)
+neighbours = nnids[demoid]
 
-<span class="c1">#choose colors for a given number of neighbours</span>
-<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">]</span>
-<span class="c1"># colors = np.random.random( size=(len(neighbours),3) )</span>
+#choose colors for a given number of neighbours
+colors = [&#39;r&#39;,&#39;g&#39;,&#39;b&#39;]
+# colors = np.random.random( size=(len(neighbours),3) )
 
-<span class="c1">#plot all the neighbour points</span>
-<span class="n">plotra</span>  <span class="o">=</span> <span class="p">[</span><span class="n">coord</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">coord</span> <span class="ow">in</span> <span class="n">coords</span><span class="p">[</span><span class="n">neighbours</span><span class="p">]</span> <span class="p">]</span>
-<span class="n">plotdec</span> <span class="o">=</span> <span class="p">[</span><span class="n">coord</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">coord</span> <span class="ow">in</span> <span class="n">coords</span><span class="p">[</span><span class="n">neighbours</span><span class="p">]</span> <span class="p">]</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">plotra</span><span class="p">,</span> <span class="n">plotdec</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+#plot all the neighbour points
+plotra  = [coord[0] for coord in coords[neighbours] ]
+plotdec = [coord[1] for coord in coords[neighbours] ]
+plt.scatter(plotra, plotdec, c=colors, s=50, marker=&#39;o&#39;)
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">plotra</span><span class="p">)):</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">demora</span><span class="p">,</span><span class="n">plotra</span><span class="p">[</span><span class="n">i</span><span class="p">]],[</span><span class="n">demodec</span><span class="p">,</span><span class="n">plotdec</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+for i in range(len(plotra)):
+    plt.plot([demora,plotra[i]],[demodec,plotdec[i]] , c=colors[i])
 
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;ra (deg)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;dec (deg)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="c1">#plt.savefig(&quot;neighbours_of_15th_obj.png&quot;,bbox_inches=&quot;tight&quot;)</span>
+plt.xlabel(&quot;ra (deg)&quot;, fontsize=16)
+plt.ylabel(&quot;dec (deg)&quot;, fontsize=16)
+plt.show()
+#plt.savefig(&quot;neighbours_of_15th_obj.png&quot;,bbox_inches=&quot;tight&quot;)
 
-<span class="c1"># Now visuall compare the distances</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;index--&gt; distance</span><span class="se">\t\t</span><span class="s2">color&quot;</span><span class="p">)</span>
-<span class="n">ndist</span> <span class="o">=</span> <span class="n">distances</span><span class="p">[</span><span class="n">demoid</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">nidx</span><span class="p">,</span><span class="n">dist</span><span class="p">,</span><span class="n">c</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">neighbours</span><span class="p">,</span><span class="n">ndist</span><span class="p">,</span><span class="n">colors</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">nidx</span><span class="p">,</span><span class="s2">&quot;---&gt;&quot;</span><span class="p">,</span><span class="n">dist</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+# Now visuall compare the distances
+print(&quot;index--&gt; distance\t\tcolor&quot;)
+ndist = distances[demoid]
+for nidx,dist,c in zip(neighbours,ndist,colors):
+    print(nidx,&quot;---&gt;&quot;,dist, &#39;\t&#39;, c)
 </pre></div>
 </div>
 </div>
@@ -713,16 +684,16 @@ index--&gt; distance            color
 </section>
 </section>
 <section id="Using-k-d-tree-algorithm-to-query-the-neighbour-points-within-a-given-distance">
-<h2>Using k-d tree algorithm to query the neighbour points within a given distance<a class="headerlink" href="#Using-k-d-tree-algorithm-to-query-the-neighbour-points-within-a-given-distance" title="Permalink to this heading"></a></h2>
+<h2>Using k-d tree algorithm to query the neighbour points within a given distance<a class="headerlink" href="#Using-k-d-tree-algorithm-to-query-the-neighbour-points-within-a-given-distance" title="Link to this heading"></a></h2>
 <p>time complexity ~ <span class="math notranslate nohighlight">\(\mathcal{O}(n\log{}n)\)</span></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">spatial</span>
-<span class="n">sin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span>
-<span class="n">cos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span>
-<span class="n">deg2rad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from scipy import spatial
+sin = np.sin
+cos = np.cos
+deg2rad = np.deg2rad
 </pre></div>
 </div>
 </div>
@@ -743,84 +714,84 @@ index--&gt; distance            color
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[50]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">find_neighbours</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tra</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tdec</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;r==1 --&gt; unit sphere calculations&quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">tra</span> <span class="o">=</span> <span class="n">tra</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">tdec</span><span class="o">=</span> <span class="n">tdec</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">r</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">rad_to_arcsec</span> <span class="o">=</span> <span class="mf">180.0</span><span class="o">*</span><span class="mf">3600.</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">arcsec_to_rad</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">rad_to_arcsec</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>class find_neighbours:
+    def __init__(self, tra=None, tdec=None, r=1):
+        &quot;&quot;&quot;r==1 --&gt; unit sphere calculations&quot;&quot;&quot;
+        self.tra = tra
+        self.tdec= tdec
+        self.r = r
+        self.rad_to_arcsec = 180.0*3600./np.pi
+        self.arcsec_to_rad = 1/self.rad_to_arcsec
 
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Initializing with sphere of radius, r=</span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+        print(f&quot;Initializing with sphere of radius, r={r}.&quot;)
 
-    <span class="c1"># write a function that converts ra,dec to cartesian components.</span>
-    <span class="k">def</span> <span class="nf">RA_DEC_to_xyz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ra</span><span class="p">,</span><span class="n">dec</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s1">&#39;deg&#39;</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;converts ra,dec to cartesian x,y,z components on a unit sphere&quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">units</span><span class="o">==</span><span class="s2">&quot;deg&quot;</span><span class="p">:</span>
-            <span class="n">ra</span> <span class="o">=</span> <span class="n">deg2rad</span><span class="p">(</span><span class="n">ra</span><span class="p">)</span>
-            <span class="n">dec</span><span class="o">=</span> <span class="n">deg2rad</span><span class="p">(</span><span class="n">dec</span><span class="p">)</span>
+    # write a function that converts ra,dec to cartesian components.
+    def RA_DEC_to_xyz(self, ra,dec, units=&#39;deg&#39;):
+        &quot;&quot;&quot;converts ra,dec to cartesian x,y,z components on a unit sphere&quot;&quot;&quot;
+        if units==&quot;deg&quot;:
+            ra = deg2rad(ra)
+            dec= deg2rad(dec)
 
-        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">dec</span><span class="p">)</span> <span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">ra</span><span class="p">)</span>
-        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">dec</span><span class="p">)</span> <span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">ra</span><span class="p">)</span>
-        <span class="n">z</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">dec</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span>
+        x = self.r *cos(dec) *cos(ra)
+        y = self.r *cos(dec) *sin(ra)
+        z = self.r *sin(dec)
+        return x,y,z
 
-    <span class="c1"># write a function `create_tree` that takes arrays of ra,dec</span>
-    <span class="c1"># values as inputs and returns a cKDTree object into these coordinates.</span>
+    # write a function `create_tree` that takes arrays of ra,dec
+    # values as inputs and returns a cKDTree object into these coordinates.
 
-    <span class="k">def</span> <span class="nf">create_tree</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="c1"># create an array of tuples of x,y,z</span>
-        <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">RA_DEC_to_xyz</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tra</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">tdec</span><span class="p">)</span>
-        <span class="c1"># make a tree using cKDTree method</span>
-        <span class="n">tree</span> <span class="o">=</span> <span class="n">spatial</span><span class="o">.</span><span class="n">cKDTree</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">])</span>
-        <span class="k">return</span> <span class="n">tree</span>
+    def create_tree(self):
+        # create an array of tuples of x,y,z
+        x,y,z = self.RA_DEC_to_xyz(self.tra,self.tdec)
+        # make a tree using cKDTree method
+        tree = spatial.cKDTree(np.c_[x,y,z])
+        return tree
 
-    <span class="c1"># write a function that takes arrays of ra,dec coordinates</span>
-    <span class="c1"># and returns the neighbour object&#39;s indices from the tree</span>
-    <span class="c1"># within some distance `rmax` arcsec .</span>
+    # write a function that takes arrays of ra,dec coordinates
+    # and returns the neighbour object&#39;s indices from the tree
+    # within some distance `rmax` arcsec .
 
-    <span class="k">def</span> <span class="nf">query_within_rmax</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">rmax</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s2">&quot;deg&quot;</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Searching for </span><span class="si">{</span><span class="n">ra</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2"> number of objects in the catalog with rmax=</span><span class="si">{</span><span class="n">rmax</span><span class="si">}</span><span class="s2"> arcsec.&quot;</span><span class="p">)</span>
-        <span class="c1">#convert rmax from arcsec to distance units</span>
-        <span class="n">rmax</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">*</span><span class="n">rmax</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">arcsec_to_rad</span>
+    def query_within_rmax(self, ra, dec, rmax=15, units=&quot;deg&quot;):
+        print(f&quot;Searching for {ra.size} number of objects in the catalog with rmax={rmax} arcsec.&quot;)
+        #convert rmax from arcsec to distance units
+        rmax = self.r *rmax *self.arcsec_to_rad
 
-        <span class="c1"># array of tuples of x,y,z of input objetcs</span>
-        <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">RA_DEC_to_xyz</span><span class="p">(</span><span class="n">ra</span><span class="p">,</span><span class="n">dec</span><span class="p">)</span>
-        <span class="n">cartesian_coords</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">]</span>
+        # array of tuples of x,y,z of input objetcs
+        x,y,z = self.RA_DEC_to_xyz(ra,dec)
+        cartesian_coords = np.c_[x,y,z]
 
-        <span class="c1"># make tree from catalog</span>
-        <span class="n">tree</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_tree</span><span class="p">()</span>
+        # make tree from catalog
+        tree = self.create_tree()
 
-        <span class="c1"># look for the neighbour objects</span>
-        <span class="n">ids_into_tree</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">query_ball_point</span><span class="p">(</span><span class="n">cartesian_coords</span><span class="p">,</span><span class="n">rmax</span><span class="p">)</span>
+        # look for the neighbour objects
+        ids_into_tree = tree.query_ball_point(cartesian_coords,rmax)
 
-        <span class="k">return</span> <span class="n">ids_into_tree</span>
+        return ids_into_tree
 </pre></div>
 </div>
 </div>
 <section id="A-sanity-check">
-<h3>A sanity check<a class="headerlink" href="#A-sanity-check" title="Permalink to this heading"></a></h3>
+<h3>A sanity check<a class="headerlink" href="#A-sanity-check" title="Link to this heading"></a></h3>
 <p>Testing conversion of (ra,dec) to (x,y,z)</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[51]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here we are not passing `tra` and `tdec` while initialising the class `find_neighbours`</span>
-<span class="c1"># So these variables take default values of `None`.</span>
-<span class="c1"># We only want to test the coordinate conversion code `RA_DEC_to_xyz`. So it&#39;s ok to not</span>
-<span class="c1"># pass `tra`,`tdec`!</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Here we are not passing `tra` and `tdec` while initialising the class `find_neighbours`
+# So these variables take default values of `None`.
+# We only want to test the coordinate conversion code `RA_DEC_to_xyz`. So it&#39;s ok to not
+# pass `tra`,`tdec`!
 
-<span class="n">code</span> <span class="o">=</span> <span class="n">find_neighbours</span><span class="p">()</span>
+code = find_neighbours()
 
-<span class="c1"># a look at the cartesian coordinates</span>
-<span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span> <span class="o">=</span> <span class="n">code</span><span class="o">.</span><span class="n">RA_DEC_to_xyz</span><span class="p">(</span><span class="n">coords</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">coords</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">cartesian_coords</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">]</span>
+# a look at the cartesian coordinates
+x,y,z = code.RA_DEC_to_xyz(coords[:,0], coords[:,1])
+cartesian_coords = np.c_[x,y,z]
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;shapes of x,y,z arrays:&quot;</span><span class="p">,</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;shapes of (x,y,z) tuple array:&quot;</span><span class="p">,</span> <span class="n">cartesian_coords</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="c1">#field on objects looks close to equator</span>
-<span class="n">cartesian_coords</span>
+print(&quot;shapes of x,y,z arrays:&quot;,x.shape,y.shape,z.shape)
+print(&quot;shapes of (x,y,z) tuple array:&quot;, cartesian_coords.shape)
+#field on objects looks close to equator
+cartesian_coords
 </pre></div>
 </div>
 </div>
@@ -851,7 +822,7 @@ array([[ 0.8553461 ,  0.50608675, -0.11072151],
 </div>
 </section>
 <section id="Compare-the-output-of-our-brute-force-algorithm-with-cKDTree-algorithm-on-dew-Demo-objects">
-<h3>Compare the output of our brute force algorithm with cKDTree algorithm on dew Demo objects<a class="headerlink" href="#Compare-the-output-of-our-brute-force-algorithm-with-cKDTree-algorithm-on-dew-Demo-objects" title="Permalink to this heading"></a></h3>
+<h3>Compare the output of our brute force algorithm with cKDTree algorithm on dew Demo objects<a class="headerlink" href="#Compare-the-output-of-our-brute-force-algorithm-with-cKDTree-algorithm-on-dew-Demo-objects" title="Link to this heading"></a></h3>
 <div class="admonition note">
 <p class="admonition-title fa fa-exclamation-circle">Exercise:</p>
 <ul>
@@ -866,20 +837,20 @@ array([[ 0.8553461 ,  0.50608675, -0.11072151],
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[52]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">demo_ids</span> <span class="o">=</span> <span class="p">[</span><span class="mi">15</span><span class="p">]</span> <span class="c1">#9,15</span>
-<span class="n">demo_ra</span> <span class="o">=</span><span class="n">coords</span><span class="p">[</span><span class="n">demo_ids</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#deg</span>
-<span class="n">demo_dec</span><span class="o">=</span><span class="n">coords</span><span class="p">[</span><span class="n">demo_ids</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="c1">#deg</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>demo_ids = [15] #9,15
+demo_ra =coords[demo_ids,0] #deg
+demo_dec=coords[demo_ids,1] #deg
 
-<span class="n">demox</span><span class="p">,</span> <span class="n">demoy</span><span class="p">,</span> <span class="n">demoz</span> <span class="o">=</span> <span class="n">code</span><span class="o">.</span><span class="n">RA_DEC_to_xyz</span><span class="p">(</span><span class="n">demo_ra</span><span class="p">,</span> <span class="n">demo_dec</span><span class="p">)</span>
-<span class="n">demoobj</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">demox</span><span class="p">,</span><span class="n">demoy</span><span class="p">,</span><span class="n">demoz</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;I had chosen following indices from set2(catalog) as my test objects:&quot;&quot;&quot;</span><span class="p">,</span><span class="n">demo_ids</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;coordinate of test objects:&quot;</span><span class="p">,</span><span class="n">demoobj</span><span class="p">)</span>
+demox, demoy, demoz = code.RA_DEC_to_xyz(demo_ra, demo_dec)
+demoobj = np.c_[demox,demoy,demoz]
+print(&quot;&quot;&quot;I had chosen following indices from set2(catalog) as my test objects:&quot;&quot;&quot;,demo_ids)
+print(&quot;coordinate of test objects:&quot;,demoobj)
 
-<span class="c1"># we want to look within `rmax` arcsec --&gt; convert `rmax` from (arcsec) angle to length units</span>
+# we want to look within `rmax` arcsec --&gt; convert `rmax` from (arcsec) angle to length units
 
-<span class="c1"># rmax = 15</span>
-<span class="c1"># print()</span>
-<span class="c1"># print(f&quot;rmax={rmax} arcsec in radians ---&gt;&quot;,rmax* arcsec_to_rad)</span>
+# rmax = 15
+# print()
+# print(f&quot;rmax={rmax} arcsec in radians ---&gt;&quot;,rmax* arcsec_to_rad)
 </pre></div>
 </div>
 </div>
@@ -897,7 +868,7 @@ coordinate of test objects: [[ 0.85581232  0.50543305 -0.11010311]]
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">code_tree</span> <span class="o">=</span> <span class="n">find_neighbours</span><span class="p">(</span><span class="n">tra</span><span class="o">=</span><span class="n">coords</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">tdec</span><span class="o">=</span><span class="n">coords</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>code_tree = find_neighbours(tra=coords[:,0], tdec=coords[:,1])
 </pre></div>
 </div>
 </div>
@@ -914,7 +885,7 @@ Initializing with sphere of radius, r=1.
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[54]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">idx</span><span class="o">=</span><span class="n">code_tree</span><span class="o">.</span><span class="n">query_within_rmax</span><span class="p">(</span><span class="n">demo_ra</span><span class="p">,</span> <span class="n">demo_dec</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>idx=code_tree.query_within_rmax(demo_ra, demo_dec)
 </pre></div>
 </div>
 </div>
@@ -931,7 +902,7 @@ Searching for 1 number of objects in the catalog with rmax=15 arcsec.
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[55]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">idx</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>idx
 </pre></div>
 </div>
 </div>
@@ -947,13 +918,13 @@ array([list([14, 15, 16, 44])], dtype=object)
 </section>
 </section>
 <section id="Compare-the-computer-time-required-by-our-brute-force-algorithm-vs-the-k-d-tree-algorithm">
-<h2>Compare the computer time required by our brute force algorithm vs the k-d tree algorithm<a class="headerlink" href="#Compare-the-computer-time-required-by-our-brute-force-algorithm-vs-the-k-d-tree-algorithm" title="Permalink to this heading"></a></h2>
+<h2>Compare the computer time required by our brute force algorithm vs the k-d tree algorithm<a class="headerlink" href="#Compare-the-computer-time-required-by-our-brute-force-algorithm-vs-the-k-d-tree-algorithm" title="Link to this heading"></a></h2>
 <p>First let’s use k-d tree to query neighbours within <code class="docutils literal notranslate"><span class="pre">rmax</span></code>=15 arcsec for each object within the catalog.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[56]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">time</span> idx=code_tree.query_within_rmax(coords[:,0], coords[:,1])
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%time idx=code_tree.query_within_rmax(coords[:,0], coords[:,1])
 </pre></div>
 </div>
 </div>
@@ -973,7 +944,7 @@ Wall time: 1.97 s
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[57]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">time</span> nnids,distances = query_neighbour_points(coords[:1000], coords[:1000], rmax=15, verbose=False)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%time nnids,distances = query_neighbour_points(coords[:1000], coords[:1000], rmax=15, verbose=False)
 </pre></div>
 </div>
 </div>
@@ -990,7 +961,7 @@ Wall time: 1min 47s
 <p>That’s just because the time required by k-d tree will grow as <span class="math notranslate nohighlight">\(\sim \mathcal{O}(n_1\log{n_2})\)</span> where as that of brute force will grow as <span class="math notranslate nohighlight">\(\sim n_1 n_2\)</span>.</p>
 </section>
 <section id="Congratulations!-Now-you-have-learnt-to--">
-<h2>Congratulations! Now you have learnt to -<a class="headerlink" href="#Congratulations!-Now-you-have-learnt-to--" title="Permalink to this heading"></a></h2>
+<h2>Congratulations! Now you have learnt to -<a class="headerlink" href="#Congratulations!-Now-you-have-learnt-to--" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>use <code class="docutils literal notranslate"><span class="pre">cKDTree</span></code> to find out neighbours of a given <code class="docutils literal notranslate"><span class="pre">set1</span></code> of objects into some other <code class="docutils literal notranslate"><span class="pre">set2</span></code> of objects.</p></li>
 <li><p>count the number of neighbours of any given object in <code class="docutils literal notranslate"><span class="pre">set1</span></code>.</p></li>
@@ -1011,10 +982,7 @@ Wall time: 1min 47s
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="astrotwin_day_2_hands_on.html" class="btn btn-neutral float-left" title="Day 2 - Finding neighbours" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="astrotwin_day_3_hands_on.html" class="btn btn-neutral float-right" title="Day 3 - Get the Weak Lensing Signals" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 

@@ -1,30 +1,28 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Day 4 - Model the weak lensing signal &mdash; AstroTwinColo_2024 2024 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/nbsphinx-code-cells.css?v=2aa19091" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=172f29ee"></script>
-      <script src="_static/doctools.js?v=888ff710"></script>
-      <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="_static/documentation_options.js?v=6fefd858"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
       <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Day 4 Solutions" href="solutions_astrotwin_day_4_hands_on.html" />
-    <link rel="prev" title="Day 3 Solutions" href="solutions_astrotwin_day_3_hands_on.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -47,18 +45,8 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="astrotwin_day_1_hands_on.html">Day 1 - Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="solutions_astrotwin_day_1_hands_on.html">Day 1 Solutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="astrotwin_day_2_hands_on.html">Day 2 - Finding neighbours</a></li>
-<li class="toctree-l1"><a class="reference internal" href="solutions_astrotwin_day_2_hands_on.html">Day 2 Solutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="astrotwin_day_3_hands_on.html">Day 3 - Get the Weak Lensing Signals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="solutions_astrotwin_day_3_hands_on.html">Day 3 Solutions</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Day 4 - Model the weak lensing signal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="solutions_astrotwin_day_4_hands_on.html">Day 4 Solutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="astrotwin_day_5_hands_on.html">Day 5 - Environmental dependence of matter profiles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="solutions_astrotwin_day_5_hands_on.html">Day 5 Solutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="solutions_astrotwin_day_5_hands_on.html#modelling-part">modelling part</a></li>
 </ul>
 
         </div>
@@ -86,7 +74,7 @@
            <div itemprop="articleBody">
              
   <section id="Day-4---Model-the-weak-lensing-signal">
-<h1>Day 4 - Model the weak lensing signal<a class="headerlink" href="#Day-4---Model-the-weak-lensing-signal" title="Permalink to this heading"></a></h1>
+<h1>Day 4 - Model the weak lensing signal<a class="headerlink" href="#Day-4---Model-the-weak-lensing-signal" title="Link to this heading"></a></h1>
 <p>This session assumes that you have your weak lensing signal ready for modeling. We understand that coding the lensing measurement portion (as covered in the Day 3 tutorial) can be quite tedious. If you don’t have the signal from yesterday’s session, we will provide you with the output file needed for modeling and obtaining halo mass constraints. Similar to the Day 3 tutorial, you will need to fill in the blanks (??) in the code snippets provided.</p>
 <p>In last tutorial/lecture, we have discussed and coded up the R.H.S. of the equation given below, which is the <strong>observed weak lensing signal</strong> (excess surface mass density).</p>
 <div class="math notranslate nohighlight">
@@ -144,10 +132,10 @@ such bins. Plus, the clusters are very bright in the inner regions, due to which
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%matplotlib inline
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy.optimize import curve_fit
 </pre></div>
 </div>
 </div>
@@ -251,15 +239,15 @@ class halo(constants):
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># nfw fits only require two parameters logarithm halo mass log10(M200m) and concentration parameter $c$</span>
-<span class="c1"># Here we are using log10(M200m) = 14, c = 5.</span>
-<span class="n">hp</span> <span class="o">=</span> <span class="n">halo</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># halo class instance</span>
-<span class="n">rbin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="mi">30</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rbin</span><span class="p">,</span> <span class="n">hp</span><span class="o">.</span><span class="n">nfw</span><span class="p">(</span><span class="n">rbin</span><span class="p">),</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$r$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\rho(r)$&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># nfw fits only require two parameters logarithm halo mass log10(M200m) and concentration parameter $c$
+# Here we are using log10(M200m) = 14, c = 5.
+hp = halo(14,5)  # halo class instance
+rbin = np.logspace(-2,np.log10(2),30)
+plt.plot(rbin, hp.nfw(rbin), &#39;-&#39;)
+plt.xscale(&#39;log&#39;)
+plt.yscale(&#39;log&#39;)
+plt.xlabel(r&#39;$r$&#39;)
+plt.ylabel(r&#39;$\rho(r)$&#39;)
 </pre></div>
 </div>
 </div>
@@ -311,7 +299,7 @@ Text(0, 0.5, &#39;$\\rho(r)$&#39;)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from scipy.optimize import curve_fit
 </pre></div>
 </div>
 </div>
@@ -319,10 +307,10 @@ Text(0, 0.5, &#39;$\\rho(r)$&#39;)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;/home/idies/workspace/Storage/divyar/AstroTwin_Colo_2024/DataStore/astrotwin_dsigma.dat&#39;</span><span class="p">)</span>
-<span class="n">x</span>    <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">y</span>    <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">yerr</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>data = np.loadtxt(&#39;/home/idies/workspace/Storage/divyar/AstroTwin_Colo_2024/DataStore/astrotwin_dsigma.dat&#39;)
+x    = data[:,0]
+y    = data[:,1]
+yerr = data[:,2]
 </pre></div>
 </div>
 </div>
@@ -330,26 +318,26 @@ Text(0, 0.5, &#39;$\\rho(r)$&#39;)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
-<span class="c1"># curve_fit requires initial guess (p0) to get resonable fits, sigma takes in the y errobars</span>
-<span class="n">popt</span><span class="p">,</span> <span class="n">pcov</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">p0</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span><span class="mf">0.5</span><span class="p">],</span> <span class="n">sigma</span><span class="o">=</span><span class="n">yerr</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>plt.figure(dpi=150)
+# curve_fit requires initial guess (p0) to get resonable fits, sigma takes in the y errobars
+popt, pcov = curve_fit(model, x, y, p0=[12,0.5], sigma=yerr)
 
-<span class="n">log_M200m</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">popt</span>
-<span class="n">sig_logMh</span><span class="p">,</span> <span class="n">sig_c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">pcov</span><span class="p">))</span> <span class="c1"># pcov is the covariance between the parameters</span>
+log_M200m, c = popt
+sig_logMh, sig_c = np.sqrt(np.diag(pcov)) # pcov is the covariance between the parameters
 
-<span class="c1"># rough estimate of chisq</span>
-<span class="n">chisq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">y</span><span class="o">-</span><span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">log_M200m</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="mf">1.0</span><span class="o">/</span><span class="n">yerr</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">dof</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">-</span> <span class="mi">2</span> <span class="c1"># 10 datapoints - 2 parameters</span>
+# rough estimate of chisq
+chisq = np.sum((y-model(x, log_M200m, c))**2*1.0/yerr**2)
+dof = 10 - 2 # 10 datapoints - 2 parameters
 
-<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">yerr</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">capsize</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Data&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">log_M200m</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;Fit, $\chi^2 /{\rm dof} = </span><span class="si">%2.2f</span><span class="s1">/</span><span class="si">%d</span><span class="s1">$&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">chisq</span><span class="p">,</span><span class="n">dof</span><span class="p">))</span>
+plt.errorbar(x, y, yerr=yerr, fmt=&#39;.&#39;, capsize=3, label=&#39;Data&#39;)
+plt.errorbar(x, model(x, log_M200m, c) , fmt=&#39;-&#39;, label=r&#39;Fit, $\chi^2 /{\rm dof} = %2.2f/%d$&#39;%(chisq,dof))
 
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$M_{\rm 200m} = </span><span class="si">%2.2f</span><span class="s1"> \pm </span><span class="si">%2.2f</span><span class="s1"> \times 10^</span><span class="si">{14}</span><span class="s1"> \,h^{-1} M_\odot,\, c = </span><span class="si">%2.2f</span><span class="s1"> \pm </span><span class="si">%2.2f</span><span class="s1">$&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">log_M200m</span><span class="p">,</span> <span class="n">sig_logMh</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">sig_c</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$R[{\rm h^{-1}Mpc}]$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\Delta\Sigma [{\rm h M_\odot pc^{-2}}]$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+plt.title(r&#39;$M_{\rm 200m} = %2.2f \pm %2.2f \times 10^{14} \,h^{-1} M_\odot,\, c = %2.2f \pm %2.2f$&#39;%(log_M200m, sig_logMh, c, sig_c))
+plt.legend()
+plt.xlabel(r&#39;$R[{\rm h^{-1}Mpc}]$&#39;)
+plt.ylabel(r&#39;$\Delta\Sigma [{\rm h M_\odot pc^{-2}}]$&#39;)
+plt.xscale(&#39;log&#39;)
+plt.yscale(&#39;log&#39;)
 </pre></div>
 </div>
 </div>
@@ -367,10 +355,7 @@ Text(0, 0.5, &#39;$\\rho(r)$&#39;)
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="solutions_astrotwin_day_3_hands_on.html" class="btn btn-neutral float-left" title="Day 3 Solutions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="solutions_astrotwin_day_4_hands_on.html" class="btn btn-neutral float-right" title="Day 4 Solutions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 
