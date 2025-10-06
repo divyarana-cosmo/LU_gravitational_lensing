@@ -1,0 +1,635 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Day 5 Solutions &mdash; AstroTwinColo_2024 2024 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=7ab3649f" />
+      <link rel="stylesheet" type="text/css" href="_static/nbsphinx-code-cells.css?v=2aa19091" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=6fefd858"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Day 5 - Environmental dependence of matter profiles" href="astrotwin_day_5_hands_on.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            AstroTwinColo_2024
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="astrotwin_day_1_hands_on.html">Day 1 - Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="solutions_astrotwin_day_1_hands_on.html">Day 1 Solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="astrotwin_day_2_hands_on.html">Day 2 - Finding neighbours</a></li>
+<li class="toctree-l1"><a class="reference internal" href="solutions_astrotwin_day_2_hands_on.html">Day 2 Solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="astrotwin_day_3_hands_on.html">Day 3 - Get the Weak Lensing Signals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="solutions_astrotwin_day_3_hands_on.html">Day 3 Solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="astrotwin_day_4_hands_on.html">Day 4 - Model the weak lensing signal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="solutions_astrotwin_day_4_hands_on.html">Day 4 Solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="astrotwin_day_5_hands_on.html">Day 5 - Environmental dependence of matter profiles</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Day 5 Solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#modelling-part">modelling part</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">AstroTwinColo_2024</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Day 5 Solutions</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/solutions_astrotwin_day_5_hands_on.ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="Day-5-Solutions">
+<h1>Day 5 Solutions<a class="headerlink" href="#Day-5-Solutions" title="Link to this heading"></a></h1>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#loading the required packages</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.spatial</span> <span class="kn">import</span> <span class="n">cKDTree</span>
+<span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="kn">import</span> <span class="n">FlatLambdaCDM</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_xyz</span><span class="p">(</span><span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">):</span>
+    <span class="n">ra</span> <span class="o">=</span> <span class="n">ra</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">180.</span>
+    <span class="n">dec</span> <span class="o">=</span> <span class="n">dec</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">180.</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">dec</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">ra</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">dec</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ra</span><span class="p">)</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">dec</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">get_xyz</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">60</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(0.43301270189221946, 0.25, 0.8660254037844386)
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># selection cut on the lens sample</span>
+<span class="k">def</span> <span class="nf">lens_select</span><span class="p">(</span><span class="n">zmin</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">zmax</span><span class="o">=</span><span class="mf">0.33</span><span class="p">,</span> <span class="n">rsepmin</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">rsepmax</span><span class="o">=</span><span class="mf">0.4</span><span class="p">):</span>
+    <span class="c1">#please check the file path properly</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/home/idies/workspace/Storage/divyar/AstroTwin_Colo_2024/DataStore/redmapper_satellites.dat&#39;</span><span class="p">,</span> <span class="n">delim_whitespace</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="c1">#sample selection cut</span>
+    <span class="n">idx</span>  <span class="o">=</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;rsep[h-1Mpc]&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="n">rsepmin</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;rsep[h-1Mpc]&#39;</span><span class="p">]</span><span class="o">&lt;=</span><span class="n">rsepmax</span><span class="p">)</span>
+    <span class="n">idx</span>  <span class="o">=</span> <span class="n">idx</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;zred&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="n">zmin</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;zred&#39;</span><span class="p">]</span><span class="o">&lt;=</span><span class="n">zmax</span><span class="p">)</span>
+    <span class="n">ra</span>   <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;ra&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+    <span class="n">dec</span>  <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;dec&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+    <span class="n">zred</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;zred&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+    <span class="c1">#as we have no weights to apply we set them to unity</span>
+    <span class="n">wgt</span>  <span class="o">=</span> <span class="n">ra</span><span class="o">*</span><span class="mf">1.0</span><span class="o">/</span><span class="n">ra</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;number of lenses=</span><span class="si">%d</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">len</span>(ra))
+    <span class="k">return</span> <span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">zred</span><span class="p">,</span> <span class="n">wgt</span>
+
+
+
+<span class="c1"># def lens_select(zmin=0.1, zmax=0.33, lammin=55, lammax=100):</span>
+<span class="c1">#     #please check the file path properly</span>
+<span class="c1">#     data = pd.read_csv(&#39;/home/idies/workspace/Storage/divyar/AstroTwin_Colo_2024/DataStore/redmapper.dat&#39;, delim_whitespace=1)</span>
+<span class="c1">#     #sample selection cut</span>
+<span class="c1">#     idx  = (data[&#39;lambda&#39;]&gt;lammin) &amp; (data[&#39;lambda&#39;]&lt;=lammax)</span>
+<span class="c1">#     idx  = idx &amp; (data[&#39;zred&#39;]&gt;zmin) &amp; (data[&#39;zred&#39;]&lt;=zmax)</span>
+<span class="c1">#     ra   = data[&#39;ra&#39;].values[idx]</span>
+<span class="c1">#     dec  = data[&#39;dec&#39;].values[idx]</span>
+<span class="c1">#     zred = data[&#39;zred&#39;].values[idx]</span>
+<span class="c1">#     #as we have no weights to apply we set them to unity</span>
+<span class="c1">#     wgt  = ra*1.0/ra</span>
+<span class="c1">#     print(&#39;number of lenses=%d&#39;%len(ra))</span>
+<span class="c1">#     return ra, dec, zred, wgt</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sanity cheaks on the source files</span>
+<span class="k">def</span> <span class="nf">read_sources</span><span class="p">(</span><span class="n">ifil</span><span class="p">):</span>
+    <span class="c1"># various columns in sources</span>
+    <span class="c1"># ragal, decgal, e1gal, e2gal, wgal, rms_egal, mgal, c1gal, c2gal, R2gal, zphotgal</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">ifil</span><span class="p">,</span> <span class="n">delim_whitespace</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">zphotgal</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="c1"># sanity checks on the sources data</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span>  <span class="p">(</span><span class="n">zphotgal</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">datagal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">idx</span><span class="p">),</span><span class="mi">7</span><span class="p">))</span>
+    <span class="n">datagal</span><span class="p">[:,:</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">idx</span><span class="p">,:</span><span class="mi">6</span><span class="p">]</span>
+    <span class="n">datagal</span><span class="p">[:,</span><span class="mi">6</span><span class="p">]</span>  <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="c1"># collects only -  ragal, decgal, e1gal, e2gal, wgal, rms_egal, zphotgal</span>
+    <span class="k">return</span> <span class="n">datagal</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># following surhud&#39;s lectures</span>
+<span class="k">def</span> <span class="nf">get_et</span><span class="p">(</span><span class="n">lra</span><span class="p">,</span> <span class="n">ldec</span><span class="p">,</span> <span class="n">sra</span><span class="p">,</span> <span class="n">sdec</span><span class="p">,</span> <span class="n">se1</span><span class="p">,</span> <span class="n">se2</span><span class="p">):</span>
+    <span class="n">lra</span>  <span class="o">=</span> <span class="n">lra</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span>
+    <span class="n">ldec</span> <span class="o">=</span> <span class="n">ldec</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span>
+    <span class="n">sra</span>  <span class="o">=</span> <span class="n">sra</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span>
+    <span class="n">sdec</span> <span class="o">=</span> <span class="n">sdec</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span>
+
+    <span class="n">c_theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">ldec</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">sdec</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">lra</span> <span class="o">-</span> <span class="n">sra</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ldec</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">sdec</span><span class="p">)</span>
+    <span class="n">s_theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">c_theta</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="c1"># phi to get the compute the tangential shear</span>
+    <span class="n">c_phi</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">ldec</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">sra</span> <span class="o">-</span> <span class="n">lra</span><span class="p">)</span><span class="o">*</span><span class="mf">1.0</span><span class="o">/</span><span class="n">s_theta</span>
+    <span class="n">s_phi</span>   <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ldec</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">sdec</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">ldec</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">sra</span> <span class="o">-</span> <span class="n">lra</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">sdec</span><span class="p">))</span><span class="o">*</span><span class="mf">1.0</span><span class="o">/</span><span class="n">s_theta</span>
+    <span class="c1"># tangential shear</span>
+    <span class="n">e_t</span>     <span class="o">=</span> <span class="o">-</span> <span class="n">se1</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">c_phi</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">se2</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">c_phi</span> <span class="o">*</span> <span class="n">s_phi</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">e_t</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">get_et</span><span class="p">(</span><span class="n">lra</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ldec</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sra</span><span class="o">=</span><span class="mf">0.123</span><span class="p">,</span> <span class="n">sdec</span><span class="o">=</span><span class="mf">0.045</span><span class="p">,</span> <span class="n">se1</span> <span class="o">=</span> <span class="mf">4.5e-2</span><span class="p">,</span> <span class="n">se2</span> <span class="o">=</span> <span class="mf">1.7e-2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+-0.04534629189830734
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_sigma_crit_inv</span><span class="p">(</span><span class="n">lzred</span><span class="p">,</span> <span class="n">szred</span><span class="p">,</span> <span class="n">cc</span><span class="p">):</span>
+    <span class="c1"># some important constants for the sigma crit computations</span>
+    <span class="n">gee</span> <span class="o">=</span> <span class="mf">4.301e-9</span> <span class="c1">#km^2 Mpc M_sun^-1 s^-2 gravitational constant</span>
+    <span class="n">cee</span> <span class="o">=</span> <span class="mf">3e5</span> <span class="c1">#km s^-1</span>
+    <span class="c1"># sigma_crit_calculations for a given lense-source pair</span>
+    <span class="n">sigm_crit_inv</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">angular_diameter_distance</span><span class="p">(</span><span class="n">lzred</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="o">*</span> <span class="n">cc</span><span class="o">.</span><span class="n">angular_diameter_distance_z1z2</span><span class="p">(</span><span class="n">lzred</span><span class="p">,</span> <span class="n">szred</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">lzred</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="mf">1.0</span><span class="o">/</span><span class="n">cc</span><span class="o">.</span><span class="n">angular_diameter_distance</span><span class="p">(</span><span class="n">szred</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">sigm_crit_inv</span> <span class="o">=</span> <span class="n">sigm_crit_inv</span> <span class="o">*</span> <span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">gee</span><span class="o">*</span><span class="mf">1.0</span><span class="o">/</span><span class="n">cee</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">sigm_crit_inv</span> <span class="o">=</span> <span class="mf">1e12</span><span class="o">*</span><span class="n">sigm_crit_inv</span> <span class="c1">#esd&#39;s are in pc not in Mpc</span>
+
+    <span class="k">return</span> <span class="n">sigm_crit_inv</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">astropy.cosmology</span> <span class="kn">import</span> <span class="n">FlatLambdaCDM</span>
+<span class="n">cc</span> <span class="o">=</span> <span class="n">FlatLambdaCDM</span><span class="p">(</span><span class="n">H0</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">Om0</span><span class="o">=</span><span class="mf">0.999</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">get_sigma_crit_inv</span><span class="p">(</span><span class="n">lzred</span><span class="o">=</span><span class="mf">0.33</span><span class="p">,</span> <span class="n">szred</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">cc</span><span class="o">=</span><span class="n">cc</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0.00030436585298495184
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><br/><span></span><span class="k">def</span> <span class="nf">run_pipe</span><span class="p">(</span><span class="n">Omegam</span><span class="o">=</span><span class="mf">0.315</span><span class="p">,</span> <span class="n">rmin</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">rmax</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">nbins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">zdiff</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">outputfile</span> <span class="o">=</span> <span class="s1">&#39;astrotwin_dsigma.dat&#39;</span><span class="p">):</span>
+    <span class="c1">#set the cosmology with omegaM parameter</span>
+    <span class="n">cc</span> <span class="o">=</span> <span class="n">FlatLambdaCDM</span><span class="p">(</span><span class="n">H0</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">Om0</span><span class="o">=</span><span class="n">Omegam</span><span class="p">)</span> <span class="c1"># fixing H0=100 to set units in Mpc h-1</span>
+
+    <span class="c1"># set the projected radial binning</span>
+    <span class="n">rmin</span>  <span class="o">=</span>  <span class="n">rmin</span>
+    <span class="n">rmax</span>  <span class="o">=</span>  <span class="n">rmax</span>
+    <span class="n">nbins</span> <span class="o">=</span> <span class="n">nbins</span> <span class="c1">#10 radial bins for our case</span>
+    <span class="n">rbins</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">rmin</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">rmax</span><span class="p">),</span> <span class="n">nbins</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">rdiff</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">rbins</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mf">1.0</span><span class="o">/</span><span class="n">rbins</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="c1"># initializing arrays for signal compuations</span>
+    <span class="n">sumdsig_num</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rbins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+    <span class="n">sumdsigsq_num</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rbins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+    <span class="n">sumwls</span>        <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rbins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+    <span class="n">sumwls_resp</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rbins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+
+    <span class="c1"># getting the lenses data</span>
+    <span class="n">lra</span><span class="p">,</span> <span class="n">ldec</span><span class="p">,</span> <span class="n">lred</span><span class="p">,</span> <span class="n">lwgt</span> <span class="o">=</span> <span class="n">lens_select</span><span class="p">()</span>
+    <span class="c1">#lra, ldec, lred, lwgt = lens_select(zmin=0.1, zmax=0.33, lammin=55, lammax=100)</span>
+
+    <span class="c1"># convert lense ra and dec into x,y,z cartesian coordinates</span>
+    <span class="n">lx</span><span class="p">,</span> <span class="n">ly</span><span class="p">,</span> <span class="n">lz</span> <span class="o">=</span> <span class="n">get_xyz</span><span class="p">(</span><span class="n">lra</span><span class="p">,</span> <span class="n">ldec</span><span class="p">)</span>
+
+    <span class="c1"># putting kd tree around the lenses</span>
+    <span class="n">lens_tree</span> <span class="o">=</span> <span class="n">cKDTree</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">lx</span><span class="p">,</span> <span class="n">ly</span><span class="p">,</span> <span class="n">lz</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;lenses tree is ready</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="c1"># setting maximum search radius</span>
+    <span class="n">dcommin</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">comoving_distance</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">lred</span><span class="p">))</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">dismax</span>  <span class="o">=</span> <span class="p">(</span><span class="n">rmax</span><span class="o">*</span><span class="mf">1.0</span><span class="o">/</span><span class="p">(</span><span class="n">dcommin</span><span class="p">))</span>
+
+    <span class="c1"># lets first catch the file list for sources</span>
+    <span class="n">sflist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;/home/idies/workspace/Storage/divyar/AstroTwin_Colo_2024/DataStore/hsc/*.dat&#39;</span><span class="p">))</span>
+
+    <span class="c1"># Ready to pounce on the source data</span>
+    <span class="k">for</span> <span class="n">ifil</span> <span class="ow">in</span> <span class="n">sflist</span><span class="p">:</span>
+        <span class="c1"># catching the source data matrix</span>
+        <span class="c1"># please have a check for the columns names</span>
+        <span class="n">datagal</span> <span class="o">=</span> <span class="n">read_sources</span><span class="p">(</span><span class="n">ifil</span><span class="p">)</span>
+        <span class="n">Ngal</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">datagal</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># total number of galaxies in the source file</span>
+        <span class="c1"># first two entries are ra and dec for the sources</span>
+        <span class="n">allragal</span>  <span class="o">=</span> <span class="n">datagal</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">alldecgal</span> <span class="o">=</span> <span class="n">datagal</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
+        <span class="c1"># ra and dec to x,y,z for sources</span>
+        <span class="n">allsx</span><span class="p">,</span> <span class="n">allsy</span><span class="p">,</span> <span class="n">allsz</span> <span class="o">=</span> <span class="n">get_xyz</span><span class="p">(</span><span class="n">allragal</span><span class="p">,</span> <span class="n">alldecgal</span><span class="p">)</span>
+        <span class="c1"># query in a ball around individual sources and collect the lenses ids with a maximum radius</span>
+        <span class="n">slidx</span> <span class="o">=</span> <span class="n">lens_tree</span><span class="o">.</span><span class="n">query_ball_point</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">([</span><span class="n">allsx</span><span class="p">,</span> <span class="n">allsy</span><span class="p">,</span> <span class="n">allsz</span><span class="p">]),</span> <span class="n">dismax</span><span class="p">)</span>
+        <span class="c1"># various columns in sources</span>
+        <span class="c1"># ragal, decgal, e1gal, e2gal, wgal, rms_egal, mgal, c1gal, c2gal, R2gal, zphotgal</span>
+        <span class="c1"># looping over all the galaxies</span>
+        <span class="k">for</span> <span class="n">igal</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Ngal</span><span class="p">):</span>
+            <span class="n">ragal</span>    <span class="o">=</span> <span class="n">datagal</span><span class="p">[</span><span class="n">igal</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">decgal</span>   <span class="o">=</span> <span class="n">datagal</span><span class="p">[</span><span class="n">igal</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">e1gal</span>    <span class="o">=</span> <span class="n">datagal</span><span class="p">[</span><span class="n">igal</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+            <span class="n">e2gal</span>    <span class="o">=</span> <span class="n">datagal</span><span class="p">[</span><span class="n">igal</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+            <span class="n">wgal</span>     <span class="o">=</span> <span class="n">datagal</span><span class="p">[</span><span class="n">igal</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+            <span class="n">rms_egal</span> <span class="o">=</span> <span class="n">datagal</span><span class="p">[</span><span class="n">igal</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+            <span class="n">zphotgal</span> <span class="o">=</span> <span class="n">datagal</span><span class="p">[</span><span class="n">igal</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+
+            <span class="c1"># array of lenses indices</span>
+            <span class="n">lidx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">slidx</span><span class="p">[</span><span class="n">igal</span><span class="p">])</span>
+            <span class="c1"># removing sources which doesn&#39;t have any lenses around them</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">lidx</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+                <span class="k">continue</span>
+
+            <span class="c1"># selecting a cleaner background</span>
+            <span class="n">zcut</span> <span class="o">=</span> <span class="p">(</span><span class="n">lred</span><span class="p">[</span><span class="n">lidx</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">zphotgal</span> <span class="o">-</span> <span class="n">zdiff</span><span class="p">))</span> <span class="c1">#only taking the foreground lenses</span>
+            <span class="c1"># again skipping the onces which doesn&#39;t satisfy the above criteria</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">zcut</span><span class="p">)</span><span class="o">==</span><span class="mf">0.0</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="c1"># collecting the  data of lenses around individual source</span>
+            <span class="n">lidx</span>   <span class="o">=</span> <span class="n">lidx</span><span class="p">[</span><span class="n">zcut</span><span class="p">]</span> <span class="c1"># this will catch the array indices for our lenses</span>
+            <span class="n">sra</span>    <span class="o">=</span> <span class="n">ragal</span>
+            <span class="n">sdec</span>   <span class="o">=</span> <span class="n">decgal</span>
+
+            <span class="n">l_ra</span>   <span class="o">=</span> <span class="n">lra</span><span class="p">[</span><span class="n">lidx</span><span class="p">]</span>
+            <span class="n">l_dec</span>  <span class="o">=</span> <span class="n">ldec</span><span class="p">[</span><span class="n">lidx</span><span class="p">]</span>
+            <span class="n">l_zred</span> <span class="o">=</span> <span class="n">lred</span><span class="p">[</span><span class="n">lidx</span><span class="p">]</span>
+            <span class="n">l_wgt</span>  <span class="o">=</span> <span class="n">lwgt</span><span class="p">[</span><span class="n">lidx</span><span class="p">]</span>
+
+            <span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">sz</span> <span class="o">=</span> <span class="n">get_xyz</span><span class="p">(</span><span class="n">sra</span><span class="p">,</span><span class="n">sdec</span><span class="p">)</span> <span class="c1"># individual galaxy ra,dec--&gt;x,y,z</span>
+            <span class="n">lx</span><span class="p">,</span> <span class="n">ly</span><span class="p">,</span> <span class="n">lz</span> <span class="o">=</span> <span class="n">get_xyz</span><span class="p">(</span><span class="n">l_ra</span><span class="p">,</span><span class="n">l_dec</span><span class="p">)</span> <span class="c1"># individual galaxy ra,dec--&gt;x,y,z</span>
+
+            <span class="c1"># getting the radial separations for a lense source pair</span>
+            <span class="n">sl_sep</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">lx</span> <span class="o">-</span> <span class="n">sx</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">ly</span> <span class="o">-</span> <span class="n">sy</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">lz</span> <span class="o">-</span> <span class="n">sz</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">sl_sep</span> <span class="o">=</span> <span class="n">sl_sep</span> <span class="o">*</span> <span class="n">cc</span><span class="o">.</span><span class="n">comoving_distance</span><span class="p">(</span><span class="n">l_zred</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+            <span class="k">for</span> <span class="n">ll</span><span class="p">,</span><span class="n">sep</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sl_sep</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">sep</span><span class="o">&lt;</span><span class="n">rmin</span> <span class="ow">or</span> <span class="n">sep</span><span class="o">&gt;</span><span class="n">rmax</span><span class="p">:</span>
+                    <span class="k">continue</span>
+                <span class="n">rb</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">sep</span><span class="o">*</span><span class="mf">1.0</span><span class="o">/</span><span class="n">rmin</span><span class="p">)</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="n">rdiff</span><span class="p">)</span>
+
+                <span class="c1"># get tangantial components given positions and shapes</span>
+                <span class="n">e_t</span> <span class="o">=</span> <span class="n">get_et</span><span class="p">(</span><span class="n">lra</span> <span class="o">=</span> <span class="n">l_ra</span><span class="p">[</span><span class="n">ll</span><span class="p">],</span> <span class="n">ldec</span> <span class="o">=</span> <span class="n">l_dec</span><span class="p">[</span><span class="n">ll</span><span class="p">],</span> <span class="n">sra</span> <span class="o">=</span> <span class="n">sra</span><span class="p">,</span> <span class="n">sdec</span> <span class="o">=</span> <span class="n">sdec</span><span class="p">,</span> <span class="n">se1</span> <span class="o">=</span> <span class="n">e1gal</span><span class="p">,</span>  <span class="n">se2</span> <span class="o">=</span> <span class="n">e2gal</span><span class="p">)</span>
+
+                <span class="c1"># sigma_crit_calculations for a given lense-source pair</span>
+                <span class="n">sigm_crit_inv</span> <span class="o">=</span> <span class="n">get_sigma_crit_inv</span><span class="p">(</span><span class="n">l_zred</span><span class="p">[</span><span class="n">ll</span><span class="p">],</span> <span class="n">zphotgal</span><span class="p">,</span> <span class="n">cc</span><span class="p">)</span>
+
+                <span class="c1"># following equations given in the surhud&#39;s lectures</span>
+                <span class="n">w_ls</span>    <span class="o">=</span> <span class="n">l_wgt</span><span class="p">[</span><span class="n">ll</span><span class="p">]</span> <span class="o">*</span> <span class="n">wgal</span> <span class="o">*</span> <span class="p">(</span><span class="n">sigm_crit_inv</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+                <span class="n">w_ls_by_av_sigc_inv</span> <span class="o">=</span> <span class="n">l_wgt</span><span class="p">[</span><span class="n">ll</span><span class="p">]</span> <span class="o">*</span> <span class="n">wgal</span> <span class="o">*</span> <span class="n">sigm_crit_inv</span>
+
+                <span class="c1"># separate numerator and denominator computation</span>
+                <span class="n">sumdsig_num</span><span class="p">[</span><span class="n">rb</span><span class="p">]</span>   <span class="o">+=</span> <span class="n">w_ls_by_av_sigc_inv</span>  <span class="o">*</span> <span class="n">e_t</span>
+                <span class="n">sumdsigsq_num</span><span class="p">[</span><span class="n">rb</span><span class="p">]</span> <span class="o">+=</span> <span class="p">(</span><span class="n">w_ls_by_av_sigc_inv</span> <span class="o">*</span> <span class="n">e_t</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+                <span class="n">sumwls</span><span class="p">[</span><span class="n">rb</span><span class="p">]</span>        <span class="o">+=</span> <span class="n">w_ls</span>
+                <span class="n">sumwls_resp</span><span class="p">[</span><span class="n">rb</span><span class="p">]</span>   <span class="o">+=</span> <span class="n">w_ls</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">rms_egal</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="n">ifil</span><span class="p">)</span>
+
+
+    <span class="n">fout</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">outputfile</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+    <span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;# 0:rmin/2+rmax/2 1:DeltaSigma 2:SN_ErrDeltaSigma</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rbins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])):</span>
+        <span class="n">rrmin</span> <span class="o">=</span> <span class="n">rbins</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">rrmax</span> <span class="o">=</span> <span class="n">rbins</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">Resp</span> <span class="o">=</span> <span class="n">sumwls_resp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="mf">1.0</span><span class="o">/</span><span class="n">sumwls</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+        <span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%le</span><span class="se">\t</span><span class="si">%le</span><span class="se">\t</span><span class="si">%le</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">rrmin</span><span class="o">/</span><span class="mf">2.0</span><span class="o">+</span><span class="n">rrmax</span><span class="o">/</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">sumdsig_num</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="mf">1.0</span><span class="o">/</span><span class="n">sumwls</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="mf">2.</span><span class="o">/</span><span class="n">Resp</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sumdsigsq_num</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">*</span><span class="mf">1.0</span><span class="o">/</span><span class="n">sumwls</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="mf">2.</span><span class="o">/</span><span class="n">Resp</span><span class="p">))</span>
+    <span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;#OK&quot;</span><span class="p">)</span>
+    <span class="n">fout</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#run_pipe(rmin=0.01,rmax=3, outputfile = &#39;/home/idies/workspace/Storage/divyar/persistent/astrotwin_dsigma_satellite.dat&#39;)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;astrotwin_dsigma_satellite.dat&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">dat</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">dat</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">yerr</span><span class="o">=</span><span class="n">dat</span><span class="p">[:,</span><span class="mi">2</span><span class="p">],</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">capsize</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$R[{\rm h^{-1}Mpc}]$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\Delta\Sigma [{\rm h M_\odot pc^{-2}}]$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;astrotwin_dsigma.dat&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">dat</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">dat</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">yerr</span><span class="o">=</span><span class="n">dat</span><span class="p">[:,</span><span class="mi">2</span><span class="p">],</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">capsize</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$R[{\rm h^{-1}Mpc}]$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\Delta\Sigma [{\rm h M_\odot pc^{-2}}]$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/solutions_astrotwin_day_5_hands_on_13_0.png" src="_images/solutions_astrotwin_day_5_hands_on_13_0.png" />
+</div>
+</div>
+</section>
+<section id="modelling-part">
+<h1>modelling part<a class="headerlink" href="#modelling-part" title="Link to this heading"></a></h1>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
+<span class="kn">from</span> <span class="nn">scipy.interpolate</span> <span class="kn">import</span> <span class="n">interp1d</span>
+
+<span class="k">class</span> <span class="nc">constants</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Useful constants&quot;&quot;&quot;</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="mf">4.301e-9</span> <span class="c1">#km^2 Mpc M_sun^-1 s^-2 gravitational constant</span>
+    <span class="n">H0</span> <span class="o">=</span> <span class="mf">100.</span> <span class="c1">#h kms-1 Mpc-1 hubble constant at present</span>
+    <span class="n">omg_m</span> <span class="o">=</span> <span class="mf">0.315</span> <span class="c1">#omega_matter</span>
+    <span class="n">not_so_tiny</span> <span class="o">=</span> <span class="mf">1e-24</span>
+<span class="k">class</span> <span class="nc">halo</span><span class="p">(</span><span class="n">constants</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Useful functions for weak lensing signal modelling&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">m_tot</span><span class="p">,</span><span class="n">con_par</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">m_tot</span> <span class="o">=</span> <span class="n">m_tot</span> <span class="c1"># total mass of the halo</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">=</span> <span class="n">con_par</span> <span class="c1"># concentration parameter</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rho_crt</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">H0</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="p">)</span> <span class="c1"># rho critical</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rho_crt</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">omg_m</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">r_200</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">m_tot</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mi">200</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">rho_crt</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">omg_m</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="mf">3.</span><span class="p">)</span> <span class="c1"># radius defines size of the halo</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rho_0</span> <span class="o">=</span> <span class="n">con_par</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span><span class="n">m_tot</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">r_200</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mf">1.0</span><span class="o">+</span><span class="n">con_par</span><span class="p">)</span><span class="o">-</span><span class="n">con_par</span><span class="o">/</span><span class="p">(</span><span class="mf">1.0</span><span class="o">+</span><span class="n">con_par</span><span class="p">)))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">init_sigma</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">init_sigma_cir</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sigma_cir_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="nb">print</span><span class="p">((</span><span class="s2">&quot;Intialing NFW parameters</span><span class="se">\n</span><span class="s2"> m_tot = </span><span class="si">%s</span><span class="s2"> M_sun</span><span class="se">\n</span><span class="s2">conc_parm = </span><span class="si">%s</span><span class="se">\n</span><span class="s2">rho_0 = </span><span class="si">%s</span><span class="s2"> M_sun/Mpc^3</span><span class="se">\n</span><span class="s2"> r_s = </span><span class="si">%s</span><span class="s2"> Mpc&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">m_tot</span><span class="p">,</span><span class="n">con_par</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">rho_0</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">r_200</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">c</span><span class="p">)))</span>
+
+    <span class="k">def</span> <span class="nf">nfw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">r</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;given r, this gives nfw profile as per the instantiated parameters&quot;&quot;&quot;</span>
+        <span class="n">r_s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">r_200</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">c</span>
+        <span class="n">value</span>  <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rho_0</span><span class="o">/</span><span class="p">((</span><span class="n">r</span><span class="o">/</span><span class="n">r_s</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">r</span><span class="o">/</span><span class="n">r_s</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">value</span>
+
+    <span class="k">def</span> <span class="nf">sigma</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+        <span class="n">r_s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">r_200</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">c</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">r_s</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">rho_0</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isscalar</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
+           <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">r</span><span class="p">])</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">*</span><span class="n">r</span>
+        <span class="n">c</span><span class="o">=</span><span class="mi">0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">r</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">i</span><span class="o">/</span><span class="n">r_s</span>
+            <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">arccosh</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">arccos</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="mf">1.</span><span class="o">/</span><span class="mf">3.</span>
+            <span class="n">sig</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">*</span><span class="n">k</span>
+            <span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="o">+</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="n">sig</span>
+
+    <span class="k">def</span> <span class="nf">avg_sigma_nfw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">r</span><span class="p">):</span>
+        <span class="n">r_s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">r_200</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">c</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">r_s</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">rho_0</span>
+        <span class="n">c</span><span class="o">=</span><span class="mi">0</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isscalar</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">r</span><span class="p">])</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">*</span><span class="n">r</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">r</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">i</span><span class="o">/</span><span class="n">r_s</span>
+            <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arccosh</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="mf">2.0</span><span class="p">)</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">*</span><span class="mf">2.0</span><span class="o">/</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+            <span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arccos</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="mf">2.0</span><span class="p">)</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">*</span><span class="mf">2.0</span><span class="o">/</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+            <span class="n">sig</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">*</span><span class="n">k</span>
+            <span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="o">+</span><span class="mi">1</span>
+
+        <span class="k">return</span> <span class="n">sig</span>
+
+
+    <span class="k">def</span> <span class="nf">delta_sigma</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">r</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;difference between mean sigma and average over the circle of radius R&quot;&quot;&quot;</span>
+        <span class="n">val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">avg_sigma_nfw</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">sigma</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">val</span>
+
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;segment for the parent halo contribution for the daughter halo at distance r0&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">sigma_cir</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">r0</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;sigma mean over a circle using the spline given below&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">init_sigma_cir</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">init_sigma_cir_spl</span><span class="p">(</span><span class="n">r0</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">r</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">sigma_cir_dict</span><span class="p">[</span><span class="s2">&quot;Rmax&quot;</span><span class="p">]:</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">j</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">sigma</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">r0</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">r</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">r0</span><span class="o">*</span><span class="n">r</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">j</span><span class="p">))),</span> <span class="mf">0.</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">sigma_cir_dict</span><span class="p">[</span><span class="s2">&quot;Rmin&quot;</span><span class="p">]:</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sigma_cir_dict</span><span class="p">[</span><span class="s2">&quot;Sigmamin&quot;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">sig_cir_spl</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">value</span>
+
+    <span class="k">def</span> <span class="nf">init_sigma_cir_spl</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">r0</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;spline for the satellite at a distance r0 from the center for parents contribution averaged over a circle&quot;&quot;&quot;</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SPLINE READY FOR AVERAGING OVER CIRCLE&quot;</span><span class="p">)</span>
+        <span class="n">rdbin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">10</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">r_200</span><span class="p">),</span><span class="mi">50</span><span class="p">)</span>
+        <span class="n">des_cir</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">*</span><span class="n">rdbin</span>
+        <span class="k">for</span> <span class="n">i</span>  <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">rdbin</span><span class="p">)):</span>
+            <span class="n">des_cir</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">j</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">sigma</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">r0</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">rdbin</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">r0</span><span class="o">*</span><span class="n">rdbin</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">j</span><span class="p">))),</span> <span class="mf">0.</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">sig_cir_spl</span> <span class="o">=</span> <span class="n">interp1d</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">rdbin</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">des_cir</span><span class="p">),</span><span class="n">kind</span> <span class="o">=</span> <span class="s2">&quot;cubic&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sigma_cir_dict</span><span class="p">[</span><span class="s2">&quot;Rmax&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">rdbin</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sigma_cir_dict</span><span class="p">[</span><span class="s2">&quot;Rmin&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">rdbin</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sigma_cir_dict</span><span class="p">[</span><span class="s2">&quot;Sigmamin&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">des_cir</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">init_sigma_cir</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">delta_sigma_dau</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">r0</span><span class="p">):</span>
+        <span class="n">value</span> <span class="o">=</span>  <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">rp</span><span class="p">:</span> <span class="n">rp</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">sigma_cir</span><span class="p">(</span><span class="n">rp</span><span class="p">,</span><span class="n">r0</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">r</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">sigma_cir</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">r0</span><span class="p">)</span>
+        <span class="c1">#value =  self.sigma_cir(r,r0)</span>
+        <span class="k">return</span> <span class="n">value</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">proj_sat_profile</span><span class="p">(</span><span class="n">R</span><span class="p">):</span>
+        <span class="s2">&quot;assumed dummy profile&quot;</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="n">R</span><span class="o">**</span><span class="mi">2</span>
+
+    <span class="n">rdbin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">mhpart</span> <span class="o">=</span> <span class="mf">1e14</span>
+    <span class="n">mhdaut</span> <span class="o">=</span> <span class="mf">1e12</span>
+    <span class="n">msteldaut</span> <span class="o">=</span> <span class="mf">1e10</span>
+
+    <span class="n">h_p</span> <span class="o">=</span> <span class="n">halo</span><span class="p">(</span><span class="n">mhpart</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">h_d</span> <span class="o">=</span> <span class="n">halo</span><span class="p">(</span><span class="n">mhdaut</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">rd_dist</span> <span class="o">=</span>  <span class="mf">0.3</span>
+    <span class="n">rsepmin</span> <span class="o">=</span> <span class="mf">0.1</span>
+    <span class="n">rsepmax</span> <span class="o">=</span> <span class="mf">0.6</span>
+    <span class="n">delta_part</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">*</span><span class="n">rdbin</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rdbin</span><span class="p">)):</span>
+        <span class="c1">#delta_part[i] = h_p.delta_sigma_dau(rdbin[i], rd_dist)</span>
+        <span class="n">ans</span> <span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">rsep</span><span class="p">:</span> <span class="n">proj_sat_profile</span><span class="p">(</span><span class="n">rsep</span><span class="p">)</span> <span class="o">*</span><span class="n">h_p</span><span class="o">.</span><span class="n">delta_sigma_dau</span><span class="p">(</span><span class="n">rdbin</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">rsep</span><span class="p">),</span> <span class="n">rsepmin</span><span class="p">,</span> <span class="n">rsepmax</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">delta_part</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">ans</span><span class="o">/</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">rsep</span><span class="p">:</span> <span class="n">proj_sat_profile</span><span class="p">(</span><span class="n">rsep</span><span class="p">),</span> <span class="n">rsepmin</span><span class="p">,</span> <span class="n">rsepmax</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rdbin</span><span class="p">,</span><span class="n">delta_part</span><span class="o">/</span><span class="mf">1e12</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Parent&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rdbin</span><span class="p">,(</span><span class="n">h_d</span><span class="o">.</span><span class="n">delta_sigma</span><span class="p">(</span><span class="n">rdbin</span><span class="p">)</span> <span class="o">+</span> <span class="n">msteldaut</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">rdbin</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="mf">1e12</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Daughter&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rdbin</span><span class="p">,(</span><span class="n">delta_part</span> <span class="o">+</span> <span class="n">msteldaut</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">rdbin</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">h_d</span><span class="o">.</span><span class="n">delta_sigma</span><span class="p">(</span><span class="n">rdbin</span><span class="p">))</span><span class="o">/</span><span class="mf">1e12</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Total&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">rd_dist</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$R [{ \rm h^{-1}Mpc}]$&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\Delta \Sigma [{\rm h M_\odot pc^{-2}}]$&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;test.png&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<br/><br/></pre></div>
+</div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="astrotwin_day_5_hands_on.html" class="btn btn-neutral float-left" title="Day 5 - Environmental dependence of matter profiles" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Divya Rana and Navin Chaurasiya.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
