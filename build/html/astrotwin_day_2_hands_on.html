@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Day 2 - Finding neighbours &mdash; Weak gravitational lensing, Leiden 2025 documentation</title>
+  <title>Day 2 - Finding neighbours &mdash; Weak gravitational lensing 2025 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/nbsphinx-code-cells.css?v=2aa19091" />
@@ -34,7 +34,7 @@
           
           
           <a href="index.html" class="icon icon-home">
-            Weak gravitational lensing, Leiden
+            Weak gravitational lensing
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -55,7 +55,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Weak gravitational lensing, Leiden</a>
+          <a href="index.html">Weak gravitational lensing</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -314,7 +314,7 @@ randomly picked indices:
 </section>
 <section id="On-sky-distance-between-two-points-on-the-surface-of-a-unit-sphere.">
 <h2><code class="docutils literal notranslate"><span class="pre">On-sky</span> <span class="pre">distance</span></code> between two points on the surface of a unit sphere.<a class="headerlink" href="#On-sky-distance-between-two-points-on-the-surface-of-a-unit-sphere." title="Link to this heading"></a></h2>
-<p><img alt="7fea3c38c9cf4ac5bdefc027a02758a3" class="no-scaled-link" src="_images/Equitorial_coord_sys.jpg" style="width: 400px; height: 300px;" /></p>
+<p><img alt="5676bd5c096a47a087d14297aca2d986" class="no-scaled-link" src="_images/Equitorial_coord_sys.jpg" style="width: 400px; height: 300px;" /></p>
 <p>Given the spherical coordinate system, we can express the points in as</p>
 <p><span class="math notranslate nohighlight">\(\vec{r_i} = r_i \cdot (\sin(90 -\delta_i) \cos\alpha_i \ \hat{x}+ \sin(90 -\delta_i) \sin\alpha_i \ \hat{y} + \cos(90 -\delta_i) \ \hat{z})\)</span>, <span class="math notranslate nohighlight">\(\hspace{0.2cm}\)</span>for <span class="math notranslate nohighlight">\(\mathrm{i \in (1,2)}\)</span>. Here <span class="math notranslate nohighlight">\(\alpha_i\)</span> and <span class="math notranslate nohighlight">\(\delta_i\)</span> are the right ascension and declination for <span class="math notranslate nohighlight">\(i^{\rm th}\)</span> point.</p>
 <p>We will first compute the cosine of the angle <span class="math notranslate nohighlight">\(\theta\)</span> between the points using :</p>
@@ -365,7 +365,7 @@ def dist_betw_two_obj(obj1,obj2):
 </ul>
 </div>
 <p>I get the following:</p>
-<p><img alt="9f8c9e3a7f8b418ca4c66fc4a0245fe9" class="no-scaled-link" src="_images/onsky_distance_test.png" style="width: 300px; height: 70px;" /></p>
+<p><img alt="e75c1b98b2f249ff974b91f3493c5354" class="no-scaled-link" src="_images/onsky_distance_test.png" style="width: 300px; height: 70px;" /></p>
 </section>
 <section id="Brute-force-search-for-neighbour-objects-within-a-specified-distance">
 <h2>Brute force search for neighbour objects within a specified distance<a class="headerlink" href="#Brute-force-search-for-neighbour-objects-within-a-specified-distance" title="Link to this heading"></a></h2>
@@ -577,8 +577,8 @@ Accessing the neighbour coordinates of the 15th object:
 </div>
 <p>I’m plotting the neighbours of <span class="math notranslate nohighlight">\(15^{th}\)</span> point from the catalog. And also printing their <code class="docutils literal notranslate"><span class="pre">indices</span></code> and <code class="docutils literal notranslate"><span class="pre">distances</span></code> to compare the stored distances by eye!</p>
 <p>Point marked as <span class="math notranslate nohighlight">\(\star\)</span> is the <span class="math notranslate nohighlight">\(15^{th}\)</span> point. Other points are its neighbours.</p>
-<p><img alt="c592cb533c744165911ea92d69b05d19" class="no-scaled-link" src="_images/neighbours_of_15th_obj.png" style="width: 500px; height: 400px;" /></p>
-<p><img alt="dcae8544b9ea4bd5acf78ebef4a75a12" class="no-scaled-link" src="_images/neighbours_printed.png" style="width: 300px; height: 80px;" /></p>
+<p><img alt="5ca4a1ca766c4f5599bda7912abd667f" class="no-scaled-link" src="_images/neighbours_of_15th_obj.png" style="width: 500px; height: 400px;" /></p>
+<p><img alt="ecf4f56a354c4e488c6c060cdb3a4fe4" class="no-scaled-link" src="_images/neighbours_printed.png" style="width: 300px; height: 80px;" /></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
 </pre></div>
@@ -730,7 +730,7 @@ print(cartesian_coords)
 </pre></div>
 </div>
 </div>
-<p><img alt="cbf04aafedbb4fe78a4d69bc3da05c0c" class="no-scaled-link" src="_images/coordinate_conversion_test.png" style="width: 400px; height: 200px;" /></p>
+<p><img alt="a46b87c2e745426ca9d4af46e6489465" class="no-scaled-link" src="_images/coordinate_conversion_test.png" style="width: 400px; height: 200px;" /></p>
 </section>
 <section id="Compare-the-output-of-our-brute-force-algorithm-with-cKDTree-algorithm-on-few-Demo-objects">
 <h3>Compare the output of our brute force algorithm with cKDTree algorithm on few Demo objects<a class="headerlink" href="#Compare-the-output-of-our-brute-force-algorithm-with-cKDTree-algorithm-on-few-Demo-objects" title="Link to this heading"></a></h3>

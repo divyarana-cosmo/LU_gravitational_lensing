@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Weak gravitational lensing, Leiden'
+project = 'Weak gravitational lensing'
 copyright = '2025, Divya Rana'
 author = 'Divya Rana'
 release = '2025'
