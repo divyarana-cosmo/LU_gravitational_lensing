@@ -1,22 +1,22 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="./">
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Day 2 Solutions &mdash; AstroTwinColo_2024 2024 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=7ab3649f" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/nbsphinx-code-cells.css?v=2aa19091" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=6fefd858"></script>
-      <script src="_static/doctools.js?v=9a2dae69"></script>
-      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=172f29ee"></script>
+      <script src="_static/doctools.js?v=888ff710"></script>
+      <script src="_static/sphinx_highlight.js?v=4825356b"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
       <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -103,7 +103,7 @@
            <div itemprop="articleBody">
              
   <section id="Day-2-Solutions">
-<h1>Day 2 Solutions<a class="headerlink" href="#Day-2-Solutions" title="Link to this heading"></a></h1>
+<h1>Day 2 Solutions<a class="headerlink" href="#Day-2-Solutions" title="Permalink to this heading"></a></h1>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -116,7 +116,7 @@
 </div>
 </div>
 <section id="Reading-the-lens/source-catalog">
-<h2>Reading the lens/source catalog<a class="headerlink" href="#Reading-the-lens/source-catalog" title="Link to this heading"></a></h2>
+<h2>Reading the lens/source catalog<a class="headerlink" href="#Reading-the-lens/source-catalog" title="Permalink to this heading"></a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -228,7 +228,7 @@ ra,dec
 </div>
 </section>
 <section id="Visualising-the-coordinate-space-of-input-data">
-<h2>Visualising the coordinate space of input data<a class="headerlink" href="#Visualising-the-coordinate-space-of-input-data" title="Link to this heading"></a></h2>
+<h2>Visualising the coordinate space of input data<a class="headerlink" href="#Visualising-the-coordinate-space-of-input-data" title="Permalink to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title fa fa-exclamation-circle">Exercise:</p>
 <ul>
@@ -277,7 +277,7 @@ ra,dec
 </div>
 </section>
 <section id="On-sky-distance-between-two-points-on-the-surface-of-a-unit-sphere">
-<h2><code class="docutils literal notranslate"><span class="pre">On-sky</span> <span class="pre">distance</span></code> between two points on the surface of a unit sphere<a class="headerlink" href="#On-sky-distance-between-two-points-on-the-surface-of-a-unit-sphere" title="Link to this heading"></a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">On-sky</span> <span class="pre">distance</span></code> between two points on the surface of a unit sphere<a class="headerlink" href="#On-sky-distance-between-two-points-on-the-surface-of-a-unit-sphere" title="Permalink to this heading"></a></h2>
 <p>Given the spherical coordinate system, we can express the points in as</p>
 <p><span class="math notranslate nohighlight">\(\vec{r_i} = r_i \cdot (\sin(90 -\delta_i) \cos\alpha_i \ \hat{x}+ \sin(90 -\delta_i) \sin\alpha_i \ \hat{y} + \cos(90 -\delta_i) \ \hat{z})\)</span>, <span class="math notranslate nohighlight">\(\hspace{0.2cm}\)</span>for <span class="math notranslate nohighlight">\(\mathrm{i \in (1,2)}\)</span>. Here <span class="math notranslate nohighlight">\(\alpha_i\)</span> and <span class="math notranslate nohighlight">\(\delta_i\)</span> are the right ascension and declination for <span class="math notranslate nohighlight">\(i^{\rm th}\)</span> point.</p>
 <p>We will first compute the cosine of the angle <span class="math notranslate nohighlight">\(\theta\)</span> between the points using :</p>
@@ -356,7 +356,7 @@ distance: 23.7466131834144 arcsec
 </div>
 </section>
 <section id="Brute-force-search-for-neighbour-objects-within-a-specified-distance">
-<h2>Brute force search for neighbour objects within a specified distance<a class="headerlink" href="#Brute-force-search-for-neighbour-objects-within-a-specified-distance" title="Link to this heading"></a></h2>
+<h2>Brute force search for neighbour objects within a specified distance<a class="headerlink" href="#Brute-force-search-for-neighbour-objects-within-a-specified-distance" title="Permalink to this heading"></a></h2>
 <p>time complexity ~ <span class="math notranslate nohighlight">\(\mathcal{O}(n^2)\)</span></p>
 <div class="admonition note">
 <p class="admonition-title fa fa-exclamation-circle">Exercise:</p>
@@ -442,7 +442,7 @@ distance: 23.7466131834144 arcsec
 </div>
 </div>
 <section id="Testing-the-above-brute-force-search-functions">
-<h3>Testing the above <code class="docutils literal notranslate"><span class="pre">brute</span> <span class="pre">force</span> <span class="pre">search</span></code> functions<a class="headerlink" href="#Testing-the-above-brute-force-search-functions" title="Link to this heading"></a></h3>
+<h3>Testing the above <code class="docutils literal notranslate"><span class="pre">brute</span> <span class="pre">force</span> <span class="pre">search</span></code> functions<a class="headerlink" href="#Testing-the-above-brute-force-search-functions" title="Permalink to this heading"></a></h3>
 <div class="admonition note">
 <p class="admonition-title fa fa-exclamation-circle">Exercise:</p>
 <ul>
@@ -641,7 +641,7 @@ Accessing the neighbour coordinates of the 15th object:
 </section>
 <hr class="docutils" />
 <section id="A-visual-sanity-check-for-execution-of-find_neighbour_points-function">
-<h3>A visual sanity check for execution of <code class="docutils literal notranslate"><span class="pre">find_neighbour_points</span></code> function<a class="headerlink" href="#A-visual-sanity-check-for-execution-of-find_neighbour_points-function" title="Link to this heading"></a></h3>
+<h3>A visual sanity check for execution of <code class="docutils literal notranslate"><span class="pre">find_neighbour_points</span></code> function<a class="headerlink" href="#A-visual-sanity-check-for-execution-of-find_neighbour_points-function" title="Permalink to this heading"></a></h3>
 <div class="admonition note">
 <p class="admonition-title fa fa-exclamation-circle">Exercise:</p>
 <ul class="simple">
@@ -713,7 +713,7 @@ index--&gt; distance            color
 </section>
 </section>
 <section id="Using-k-d-tree-algorithm-to-query-the-neighbour-points-within-a-given-distance">
-<h2>Using k-d tree algorithm to query the neighbour points within a given distance<a class="headerlink" href="#Using-k-d-tree-algorithm-to-query-the-neighbour-points-within-a-given-distance" title="Link to this heading"></a></h2>
+<h2>Using k-d tree algorithm to query the neighbour points within a given distance<a class="headerlink" href="#Using-k-d-tree-algorithm-to-query-the-neighbour-points-within-a-given-distance" title="Permalink to this heading"></a></h2>
 <p>time complexity ~ <span class="math notranslate nohighlight">\(\mathcal{O}(n\log{}n)\)</span></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
@@ -800,7 +800,7 @@ index--&gt; distance            color
 </div>
 </div>
 <section id="A-sanity-check">
-<h3>A sanity check<a class="headerlink" href="#A-sanity-check" title="Link to this heading"></a></h3>
+<h3>A sanity check<a class="headerlink" href="#A-sanity-check" title="Permalink to this heading"></a></h3>
 <p>Testing conversion of (ra,dec) to (x,y,z)</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[51]:
@@ -851,7 +851,7 @@ array([[ 0.8553461 ,  0.50608675, -0.11072151],
 </div>
 </section>
 <section id="Compare-the-output-of-our-brute-force-algorithm-with-cKDTree-algorithm-on-dew-Demo-objects">
-<h3>Compare the output of our brute force algorithm with cKDTree algorithm on dew Demo objects<a class="headerlink" href="#Compare-the-output-of-our-brute-force-algorithm-with-cKDTree-algorithm-on-dew-Demo-objects" title="Link to this heading"></a></h3>
+<h3>Compare the output of our brute force algorithm with cKDTree algorithm on dew Demo objects<a class="headerlink" href="#Compare-the-output-of-our-brute-force-algorithm-with-cKDTree-algorithm-on-dew-Demo-objects" title="Permalink to this heading"></a></h3>
 <div class="admonition note">
 <p class="admonition-title fa fa-exclamation-circle">Exercise:</p>
 <ul>
@@ -947,7 +947,7 @@ array([list([14, 15, 16, 44])], dtype=object)
 </section>
 </section>
 <section id="Compare-the-computer-time-required-by-our-brute-force-algorithm-vs-the-k-d-tree-algorithm">
-<h2>Compare the computer time required by our brute force algorithm vs the k-d tree algorithm<a class="headerlink" href="#Compare-the-computer-time-required-by-our-brute-force-algorithm-vs-the-k-d-tree-algorithm" title="Link to this heading"></a></h2>
+<h2>Compare the computer time required by our brute force algorithm vs the k-d tree algorithm<a class="headerlink" href="#Compare-the-computer-time-required-by-our-brute-force-algorithm-vs-the-k-d-tree-algorithm" title="Permalink to this heading"></a></h2>
 <p>First let’s use k-d tree to query neighbours within <code class="docutils literal notranslate"><span class="pre">rmax</span></code>=15 arcsec for each object within the catalog.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[56]:
@@ -990,7 +990,7 @@ Wall time: 1min 47s
 <p>That’s just because the time required by k-d tree will grow as <span class="math notranslate nohighlight">\(\sim \mathcal{O}(n_1\log{n_2})\)</span> where as that of brute force will grow as <span class="math notranslate nohighlight">\(\sim n_1 n_2\)</span>.</p>
 </section>
 <section id="Congratulations!-Now-you-have-learnt-to--">
-<h2>Congratulations! Now you have learnt to -<a class="headerlink" href="#Congratulations!-Now-you-have-learnt-to--" title="Link to this heading"></a></h2>
+<h2>Congratulations! Now you have learnt to -<a class="headerlink" href="#Congratulations!-Now-you-have-learnt-to--" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>use <code class="docutils literal notranslate"><span class="pre">cKDTree</span></code> to find out neighbours of a given <code class="docutils literal notranslate"><span class="pre">set1</span></code> of objects into some other <code class="docutils literal notranslate"><span class="pre">set2</span></code> of objects.</p></li>
 <li><p>count the number of neighbours of any given object in <code class="docutils literal notranslate"><span class="pre">set1</span></code>.</p></li>
