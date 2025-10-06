@@ -1,0 +1,1010 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Day 2 Solutions &mdash; AstroTwinColo_2024 2024 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/nbsphinx-code-cells.css?v=2aa19091" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=6fefd858"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            AstroTwinColo_2024
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="astrotwin_day_1_hands_on.html">Day 1 - Introduction</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">AstroTwinColo_2024</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Day 2 Solutions</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/solutions_astrotwin_day_2_hands_on.ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="Day-2-Solutions">
+<h1>Day 2 Solutions<a class="headerlink" href="#Day-2-Solutions" title="Link to this heading"></a></h1>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import pandas as pd
+import numpy as np
+from matplotlib import pyplot as plt
+from time import time
+</pre></div>
+</div>
+</div>
+<section id="Reading-the-lens/source-catalog">
+<h2>Reading the lens/source catalog<a class="headerlink" href="#Reading-the-lens/source-catalog" title="Link to this heading"></a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>!head -n 5 /home/idies/workspace/Storage/divyar/AstroTwin_Colo_2024/DataStore/demo_objects.csv
+
+# !wc -l /home/idies/workspace/Storage/divyar/AstroTwin_Colo_2024/DataStore/demo_objects.csv
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ra,dec
+30.611734783139795,-6.3569091978972425
+30.61078116389429,-6.350381359287763
+30.596477830319948,-6.3461523588063935
+30.592680083175416,-6.3445214768250775
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#reading lens file
+
+#tries to read everthing in the file
+path=&quot;/home/idies/workspace/Storage/divyar/AstroTwin_Colo_2024/DataStore/demo_objects.csv&quot;
+
+df = pd.read_csv(path, sep=&#39;,&#39;)
+</pre></div>
+</div>
+</div>
+<p># select required columns only</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df = pd.read_csv(path, sep=&#39;,&#39;, usecols=[0,1])
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df.head()
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ra</th>
+      <th>dec</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>30.611735</td>
+      <td>-6.356909</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>30.610781</td>
+      <td>-6.350381</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>30.596478</td>
+      <td>-6.346152</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>30.592680</td>
+      <td>-6.344521</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>30.601111</td>
+      <td>-6.338650</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="Visualising-the-coordinate-space-of-input-data">
+<h2>Visualising the coordinate space of input data<a class="headerlink" href="#Visualising-the-coordinate-space-of-input-data" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title fa fa-exclamation-circle">Exercise:</p>
+<ul>
+<li><p>write a python code to plot dec(on Y-axis) vs ra(on X-axis) of the objects passed in the dataFrame.</p>
+<p>This plot will look very dense, so in order to visually see the points distributed on the (ra,dec) plane, downsample the number of points by 100 and again plot.</p>
+</li>
+<li><p>In order to downsample the points, use <code class="docutils literal notranslate"><span class="pre">numpy.random.choice()</span></code> function.</p></li>
+</ul>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig,ax = plt.subplots(1,2, figsize=(14,6))
+ax1,ax2 = ax
+
+#plot all the coordinates
+ax1.scatter(df.ra.values,df.dec.values, s=2)
+ax1.set_xlabel(&quot;ra (deg)&quot;, fontsize=14)
+ax1.set_ylabel(&quot;dec (deg)&quot;, fontsize=14)
+
+ax1.set_title(&quot;Plot looks too dense.&quot;)
+
+#Randomly picking up points to reduce the density of points
+Number_of_points = df.ra.size
+down_sample_by = 100
+random_indices = np.random.choice(np.arange(Number_of_points),
+                                  size=int(Number_of_points/down_sample_by),
+                                  replace=False)
+#plot down sampled number coordinates
+ax2.scatter(df.ra.values[random_indices], df.dec.values[random_indices], s=2)
+ax2.set_xlabel(&quot;ra (deg)&quot;, fontsize=14)
+ax2.set_ylabel(&quot;dec (deg)&quot;, fontsize=14)
+ax2.set_title(&quot;Density of points reduced by %d.&quot;%down_sample_by)
+
+plt.show()
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/solutions_astrotwin_day_2_hands_on_10_0.png" src="_images/solutions_astrotwin_day_2_hands_on_10_0.png" />
+</div>
+</div>
+</section>
+<section id="On-sky-distance-between-two-points-on-the-surface-of-a-unit-sphere">
+<h2><code class="docutils literal notranslate"><span class="pre">On-sky</span> <span class="pre">distance</span></code> between two points on the surface of a unit sphere<a class="headerlink" href="#On-sky-distance-between-two-points-on-the-surface-of-a-unit-sphere" title="Link to this heading"></a></h2>
+<p>Given the spherical coordinate system, we can express the points in as</p>
+<p><span class="math notranslate nohighlight">\(\vec{r_i} = r_i \cdot (\sin(90 -\delta_i) \cos\alpha_i \ \hat{x}+ \sin(90 -\delta_i) \sin\alpha_i \ \hat{y} + \cos(90 -\delta_i) \ \hat{z})\)</span>, <span class="math notranslate nohighlight">\(\hspace{0.2cm}\)</span>for <span class="math notranslate nohighlight">\(\mathrm{i \in (1,2)}\)</span>. Here <span class="math notranslate nohighlight">\(\alpha_i\)</span> and <span class="math notranslate nohighlight">\(\delta_i\)</span> are the right ascension and declination for <span class="math notranslate nohighlight">\(i^{\rm th}\)</span> point.</p>
+<p>We will first compute the cosine of the angle <span class="math notranslate nohighlight">\(\theta\)</span> between the points using :</p>
+<p><span class="math notranslate nohighlight">\(\cos(\theta)=\frac{\vec{r_1}\cdot\vec{r_2}}{r_1 r_2}\)</span></p>
+<p>Given that these points are on a unit sphere we can set <span class="math notranslate nohighlight">\(r_1=r_2=1\)</span> and get the value of <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
+<p>Using: <span class="math notranslate nohighlight">\(\mathrm{arc\_distance}=s=r \times \theta\)</span>, we obtain the distance between the two points having position(<span class="math notranslate nohighlight">\(\alpha_1\)</span>, <span class="math notranslate nohighlight">\(\delta_1\)</span>) and (<span class="math notranslate nohighlight">\(\alpha_2\)</span>, <span class="math notranslate nohighlight">\(\delta_2\)</span>), respectively.</p>
+<p>Since <span class="math notranslate nohighlight">\(r_1=r_2=1\)</span>,</p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow s=\theta\)</span> (radians)</p>
+<div class="admonition note">
+<p class="admonition-title fa fa-exclamation-circle">Exercise: Using the above formula</p>
+<ul>
+<li><p>Implement a function which takes tuples of (ra,dec) of two objects and returns the distance between them on the Unit sphere.</p>
+<p>Your code should return the result in units of arc seconds and <strong>NOT</strong> in radians.</p>
+</li>
+</ul>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>rad_to_arcsec = 180.0*3600./np.pi
+arcsec_to_rad = 1/rad_to_arcsec
+deg_to_rad = np.pi/180.
+
+def dist_betw_two_obj(obj1,obj2):
+    ra1,dec1 = obj1
+    ra2,dec2 = obj2
+    #convert angles from degree to radians
+    ra1  = ra1  * deg_to_rad
+    ra2  = ra2  * deg_to_rad
+    dec1 = dec1 * deg_to_rad
+    dec2 = dec2 * deg_to_rad
+
+    #calculate the distance in arcsec
+    psi = np.cos(dec2)* np.cos(dec1)* np.cos(ra1-ra2) + np.sin(dec1)* np.sin(dec2)
+
+    #due to precision errors, sometimes psi &gt; 1 , e.g. 1.0000000000000000000001
+    #in such a case np.arccos funciton will complaint. So handle that now.
+    psi = np.clip(psi,-1,1)
+
+    dist = np.arccos(psi)* rad_to_arcsec
+    return dist
+<br/></pre></div>
+</div>
+</div>
+<p># Running and testing the distance computation code:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># creating tuple of values from ra,dec of each object
+coords = list( zip(df.ra.values,df.dec.values))
+# print(coords[0])
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print( f&quot;&quot;&quot;obj1 0: {coords[0]}
+obj2 1: {coords[1]}
+distance: {dist_betw_two_obj(coords[0],coords[1])} arcsec&quot;&quot;&quot;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+obj1 0: (30.611734783139795, -6.3569091978972425)
+obj2 1: (30.61078116389429, -6.350381359287763)
+distance: 23.7466131834144 arcsec
+</pre></div></div>
+</div>
+</section>
+<section id="Brute-force-search-for-neighbour-objects-within-a-specified-distance">
+<h2>Brute force search for neighbour objects within a specified distance<a class="headerlink" href="#Brute-force-search-for-neighbour-objects-within-a-specified-distance" title="Link to this heading"></a></h2>
+<p>time complexity ~ <span class="math notranslate nohighlight">\(\mathcal{O}(n^2)\)</span></p>
+<div class="admonition note">
+<p class="admonition-title fa fa-exclamation-circle">Exercise:</p>
+<ol class="arabic simple">
+<li></li>
+</ol>
+<ul>
+<li><p>Write a function <code class="docutils literal notranslate"><span class="pre">find_neighbour_points</span></code> that uses (ra,dec) coordinates of an object, and within some given <code class="docutils literal notranslate"><span class="pre">rmax</span></code> distance, finds its neighbour points in the given dataFrame catalog.</p></li>
+<li><p>Using this code you should be able to find neighbours of each object in the dataFrame - within the same dataFrame.</p>
+<p>Say the <span class="math notranslate nohighlight">\(1^{st}\)</span> object in the dataFrame has 5 objects within say rmax=15 arcsec, then you should be able to print/store the <code class="docutils literal notranslate"><span class="pre">indices</span></code> and <code class="docutils literal notranslate"><span class="pre">distances</span></code> of these neighbours.</p>
+</li>
+</ul>
+<ol class="arabic simple" start="2">
+<li></li>
+</ol>
+<ul class="simple">
+<li><p>Write a function <code class="docutils literal notranslate"><span class="pre">query_neighbour_points</span></code> that can use (ra,dec) coordinates of one object or an list/array of objets, and within some given <code class="docutils literal notranslate"><span class="pre">rmax</span></code> distance, finds its neighbour points in any other catalog.</p></li>
+<li><p>Using this code you should be able to access the coordinates of all the neighbours of each object that you are querying for. And hence you should be able to tell how far each neighbour is from the queried object.</p></li>
+</ul>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from collections import defaultdict
+
+def find_neighbour_points(coords, rmax=10, verbose=True):
+    &quot;&quot;&quot;
+    finding neighbour objects within some distance, for all the objects in a given array of coordinates.
+
+    coords: an array/list of tuples (ra,dec)
+
+    Returns:
+    `nnids`: indices into `coords` of neighbours of each object in `coords` within `rmax`
+    `distances`: distance of objects matched in `nnids&quot;&quot;&quot;
+
+    # define containers for the distance and id information of matched objects
+    distances = defaultdict(list)
+    nnids = defaultdict(list)
+
+    c=0
+    for ii,obj1 in enumerate(coords):
+        c+=1
+        d=0
+        for jj,obj2 in enumerate(coords):
+            if jj==ii:
+                continue
+            d+=1
+            dist = dist_betw_two_obj(obj1,obj2)
+            if dist &lt;= rmax:
+                nnids[ii].append(jj)
+                distances[ii].append(dist)
+        if verbose:
+            print(ii,nnids[ii],distances[ii])
+    return nnids,distances
+
+def query_neighbour_points(coords1, coords2, rmax=10, verbose=True):
+    &quot;&quot;&quot;
+    coords1: a tuple or an array/list of tuples (ra,dec)
+    coords2: an array/list of tuples (ra,dec)
+
+    Returns:
+    `nnids`: indices into `coords2` of neighbours of each object `coords1` within `rmax`.
+    `distances`: distance of objects matched in `nnids`&quot;&quot;&quot;
+
+    coords1 = np.atleast_2d(coords1)
+
+    # define containers for the distance and id information of matched objects
+    distances = defaultdict(list)
+    nnids = defaultdict(list)
+
+    for ii,obj1 in enumerate(coords1):
+        for jj,obj2 in enumerate(coords2):
+            dist = dist_betw_two_obj(obj1,obj2)
+            if 0&lt;=dist &lt;= rmax:
+                nnids[ii].append(jj)
+                distances[ii].append(dist)
+                #print(obj1, obj2, ii,dist)
+        if verbose:
+            print(ii,nnids[ii],distances[ii])
+    return nnids,distances
+</pre></div>
+</div>
+</div>
+<section id="Testing-the-above-brute-force-search-functions">
+<h3>Testing the above <code class="docutils literal notranslate"><span class="pre">brute</span> <span class="pre">force</span> <span class="pre">search</span></code> functions<a class="headerlink" href="#Testing-the-above-brute-force-search-functions" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title fa fa-exclamation-circle">Exercise:</p>
+<ul>
+<li><p>Using the first 50 objects in the catalog, Search for their neighbours within a ball of radius <code class="docutils literal notranslate"><span class="pre">rmax</span></code>, say for <code class="docutils literal notranslate"><span class="pre">rmax</span></code>(default value)=15 arcsec.</p>
+<p><strong>Note:</strong> We’re only using 50 points in order to reduce the compute time, but the code has no such limitation. If you run your code for a large number of points, it will take more time to finish that’s all.</p>
+</li>
+<li><p>Access the above result and print indices,distances and coordinates of the neighbours of few objects.</p></li>
+<li><p>Then test out the function <code class="docutils literal notranslate"><span class="pre">query_neighbour_points</span></code> for the same objects you take above. The neighbour matches from <code class="docutils literal notranslate"><span class="pre">query_neighbour_points</span></code> and <code class="docutils literal notranslate"><span class="pre">find_neighbour_points</span></code> must match.</p></li>
+</ul>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Running and testing find_neighbour_points
+
+print(&quot;object index, neighbours indices list, neighbours distances list &quot;)
+%time nnids,distances = find_neighbour_points(coords[:50],rmax=15)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+object index, neighbours indices list, neighbours distances list
+0 [] []
+1 [] []
+2 [3] [14.802299176580224]
+3 [2] [14.802299176580224]
+4 [36] [13.682331312465545]
+5 [] []
+6 [] []
+7 [] []
+8 [13] [9.465537930627812]
+9 [10, 12, 38] [10.94680374083333, 5.876628853240463, 14.594679725290598]
+10 [9, 12] [10.94680374083333, 10.280601486171243]
+11 [42] [7.151725370768233]
+12 [9, 10, 14] [5.876628853240463, 10.280601486171243, 11.314136132011965]
+13 [8] [9.465537930627812]
+14 [12, 15, 16] [11.314136132011965, 5.475958296970058, 11.765854084075805]
+15 [14, 16, 44] [5.475958296970058, 13.47975484115049, 10.276694006812336]
+16 [14, 15] [11.765854084075805, 13.47975484115049]
+17 [46] [6.898087849306218]
+18 [] []
+19 [] []
+20 [] []
+21 [] []
+22 [] []
+23 [] []
+24 [] []
+25 [26] [13.29908354885402]
+26 [25] [13.29908354885402]
+27 [] []
+28 [] []
+29 [30] [3.6918325238285883]
+30 [29] [3.6918325238285883]
+31 [] []
+32 [] []
+33 [] []
+34 [] []
+35 [36] [10.896870606370635]
+36 [4, 35] [13.682331312465545, 10.896870606370635]
+37 [] []
+38 [9, 40] [14.594679725290598, 14.719522078343205]
+39 [40] [1.984703189527645]
+40 [38, 39] [14.719522078343205, 1.984703189527645]
+41 [] []
+42 [11] [7.151725370768233]
+43 [] []
+44 [15] [10.276694006812336]
+45 [] []
+46 [17] [6.898087849306218]
+47 [] []
+48 [] []
+49 [] []
+CPU times: user 305 ms, sys: 15.6 ms, total: 321 ms
+Wall time: 312 ms
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Running and testing query_neighbour_points
+print(&quot;object index, neighbours indices list, neighbours distances list &quot;)
+
+# Remember because I have passed same object catalog as coords and coords2,
+# you are seeing same objects matched with each other. So if you ignore the same
+# matches, you&#39;ll notice that the printed neighbours are exactly the same as shown in
+# the above cell.
+
+%time nnidss,distancess = query_neighbour_points(coords1=coords[:50],coords2=coords[:50],rmax=15)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+object index, neighbours indices list, neighbours distances list
+0 [0] [0.003073585126505738]
+1 [1] [0.0]
+2 [2, 3] [0.003073585126505738, 14.802299176580224]
+3 [2, 3] [14.802299176580224, 0.0]
+4 [4, 36] [0.0, 13.682331312465545]
+5 [5] [0.0]
+6 [6] [0.0]
+7 [7] [0.0]
+8 [8, 13] [0.0, 9.465537930627812]
+9 [9, 10, 12, 38] [0.0, 10.94680374083333, 5.876628853240463, 14.594679725290598]
+10 [9, 10, 12] [10.94680374083333, 0.0, 10.280601486171243]
+11 [11, 42] [0.0, 7.151725370768233]
+12 [9, 10, 12, 14] [5.876628853240463, 10.280601486171243, 0.003073585126505738, 11.314136132011965]
+13 [8, 13] [9.465537930627812, 0.0]
+14 [12, 14, 15, 16] [11.314136132011965, 0.003073585126505738, 5.475958296970058, 11.765854084075805]
+15 [14, 15, 16, 44] [5.475958296970058, 0.0, 13.47975484115049, 10.276694006812336]
+16 [14, 15, 16] [11.765854084075805, 13.47975484115049, 0.0]
+17 [17, 46] [0.0, 6.898087849306218]
+18 [18] [0.0]
+19 [19] [0.0]
+20 [20] [0.0]
+21 [21] [0.0]
+22 [22] [0.0]
+23 [23] [0.0]
+24 [24] [0.003073585126505738]
+25 [25, 26] [0.0, 13.29908354885402]
+26 [25, 26] [13.29908354885402, 0.0]
+27 [27] [0.0]
+28 [28] [0.003073585126505738]
+29 [29, 30] [0.0, 3.6918325238285883]
+30 [29, 30] [3.6918325238285883, 0.0]
+31 [31] [0.0]
+32 [32] [0.0]
+33 [33] [0.0]
+34 [34] [0.0]
+35 [35, 36] [0.0, 10.896870606370635]
+36 [4, 35, 36] [13.682331312465545, 10.896870606370635, 0.003073585126505738]
+37 [37] [0.0]
+38 [9, 38, 40] [14.594679725290598, 0.0, 14.719522078343205]
+39 [39, 40] [0.0, 1.984703189527645]
+40 [38, 39, 40] [14.719522078343205, 1.984703189527645, 0.0]
+41 [41] [0.003073585126505738]
+42 [11, 42] [7.151725370768233, 0.0]
+43 [43] [0.0]
+44 [15, 44] [10.276694006812336, 0.0]
+45 [45] [0.0]
+46 [17, 46] [6.898087849306218, 0.0]
+47 [47] [0.0]
+48 [48] [0.0]
+49 [49] [0.0]
+CPU times: user 343 ms, sys: 23.9 ms, total: 367 ms
+Wall time: 351 ms
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>nth = 15
+
+print(&quot;Using result of find_neighbour_points :&quot;)
+
+print(f&quot;&quot;&quot;Accessing the neighbour points for the {nth}th object using the output
+of our brute force method:&quot;&quot;&quot;)
+
+print(f&quot;neighbours: {nnids[nth]} \ndistances: {distances[nth]}&quot;)
+
+print()
+
+print(f&quot;Accessing the neighbour coordinates of the {nth}th object:&quot;)
+for ii in nnids[nth]:
+    print(ii, coords[ii])
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Using result of find_neighbour_points :
+Accessing the neighbour points for the 15th object using the output
+of our brute force method:
+neighbours: [14, 16, 44]
+distances: [5.475958296970058, 13.47975484115049, 10.276694006812336]
+
+Accessing the neighbour coordinates of the 15th object:
+14 (30.564297942270603, -6.322030429805476)
+16 (30.562347805639572, -6.319398928221537)
+44 (30.568297869918087, -6.3202347701814166)
+</pre></div></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="A-visual-sanity-check-for-execution-of-find_neighbour_points-function">
+<h3>A visual sanity check for execution of <code class="docutils literal notranslate"><span class="pre">find_neighbour_points</span></code> function<a class="headerlink" href="#A-visual-sanity-check-for-execution-of-find_neighbour_points-function" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title fa fa-exclamation-circle">Exercise:</p>
+<ul class="simple">
+<li><p>Plot the coordinates of the neighbours of any one test point. This exercise can help us visually inspect whether our neighbour search code gave us reasonable results or not.</p></li>
+<li><p>Along with plotting, also print the distances of each of these neighbours and visually confirm that the nearest looking object on the plot indeed has the smallest distance from the test point, and similarly check for other neighbour points.</p></li>
+</ul>
+</div>
+<p>I’m plotting the neighbours of <span class="math notranslate nohighlight">\(15^{th}\)</span> point from the catalog. And also printing their <code class="docutils literal notranslate"><span class="pre">indices</span></code> and <code class="docutils literal notranslate"><span class="pre">distances</span></code> to compare the stored distances by eye!</p>
+<p>Point marked as <span class="math notranslate nohighlight">\(\star\)</span> is the <span class="math notranslate nohighlight">\(15^{th}\)</span> point. Other points are its neighbours.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[48]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>demoid = 15
+
+plt.figure(figsize=(8,6))
+#plot demo point
+demora,demodec  = coords[demoid]
+plt.scatter(demora,demodec, c=&#39;black&#39;, s=100, marker=r&#39;*&#39;)
+
+#access all the neighbours
+coords=np.array(coords)
+neighbours = nnids[demoid]
+
+#choose colors for a given number of neighbours
+colors = [&#39;r&#39;,&#39;g&#39;,&#39;b&#39;]
+# colors = np.random.random( size=(len(neighbours),3) )
+
+#plot all the neighbour points
+plotra  = [coord[0] for coord in coords[neighbours] ]
+plotdec = [coord[1] for coord in coords[neighbours] ]
+plt.scatter(plotra, plotdec, c=colors, s=50, marker=&#39;o&#39;)
+
+for i in range(len(plotra)):
+    plt.plot([demora,plotra[i]],[demodec,plotdec[i]] , c=colors[i])
+
+plt.xlabel(&quot;ra (deg)&quot;, fontsize=16)
+plt.ylabel(&quot;dec (deg)&quot;, fontsize=16)
+plt.show()
+#plt.savefig(&quot;neighbours_of_15th_obj.png&quot;,bbox_inches=&quot;tight&quot;)
+
+# Now visuall compare the distances
+print(&quot;index--&gt; distance\t\tcolor&quot;)
+ndist = distances[demoid]
+for nidx,dist,c in zip(neighbours,ndist,colors):
+    print(nidx,&quot;---&gt;&quot;,dist, &#39;\t&#39;, c)
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/solutions_astrotwin_day_2_hands_on_29_0.png" src="_images/solutions_astrotwin_day_2_hands_on_29_0.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+index--&gt; distance            color
+14 ---&gt; 5.475958296970058     r
+16 ---&gt; 13.47975484115049     g
+44 ---&gt; 10.276694006812336    b
+</pre></div></div>
+</div>
+<hr class="docutils" />
+</section>
+</section>
+<section id="Using-k-d-tree-algorithm-to-query-the-neighbour-points-within-a-given-distance">
+<h2>Using k-d tree algorithm to query the neighbour points within a given distance<a class="headerlink" href="#Using-k-d-tree-algorithm-to-query-the-neighbour-points-within-a-given-distance" title="Link to this heading"></a></h2>
+<p>time complexity ~ <span class="math notranslate nohighlight">\(\mathcal{O}(n\log{}n)\)</span></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from scipy import spatial
+sin = np.sin
+cos = np.cos
+deg2rad = np.deg2rad
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title fa fa-exclamation-circle">Exercise:</p>
+<ul>
+<li><p>Write a code using cKDTree to find out the neighbours of a given <code class="docutils literal notranslate"><span class="pre">set1</span></code> of objects (coordinates) from a catalog of other <code class="docutils literal notranslate"><span class="pre">set2</span></code> objects.</p>
+<p>Write this code in a <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">structure</span></code> where it takes-in arrays of <code class="docutils literal notranslate"><span class="pre">ra,dec</span></code> of the catalog objects (set2) and</p>
+<ul class="simple">
+<li><p>converts (ra,dec) to (x,y,z) of cartesian coordinates,</p></li>
+<li><p>creates k-d tree of the <code class="docutils literal notranslate"><span class="pre">set2</span></code> catalog objects using (x,y,z),</p></li>
+<li><p>queries for the neighbour points of - each object in the <code class="docutils literal notranslate"><span class="pre">set1</span></code>, and returns the indices in <code class="docutils literal notranslate"><span class="pre">set2</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[50]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>class find_neighbours:
+    def __init__(self, tra=None, tdec=None, r=1):
+        &quot;&quot;&quot;r==1 --&gt; unit sphere calculations&quot;&quot;&quot;
+        self.tra = tra
+        self.tdec= tdec
+        self.r = r
+        self.rad_to_arcsec = 180.0*3600./np.pi
+        self.arcsec_to_rad = 1/self.rad_to_arcsec
+
+        print(f&quot;Initializing with sphere of radius, r={r}.&quot;)
+
+    # write a function that converts ra,dec to cartesian components.
+    def RA_DEC_to_xyz(self, ra,dec, units=&#39;deg&#39;):
+        &quot;&quot;&quot;converts ra,dec to cartesian x,y,z components on a unit sphere&quot;&quot;&quot;
+        if units==&quot;deg&quot;:
+            ra = deg2rad(ra)
+            dec= deg2rad(dec)
+
+        x = self.r *cos(dec) *cos(ra)
+        y = self.r *cos(dec) *sin(ra)
+        z = self.r *sin(dec)
+        return x,y,z
+
+    # write a function `create_tree` that takes arrays of ra,dec
+    # values as inputs and returns a cKDTree object into these coordinates.
+
+    def create_tree(self):
+        # create an array of tuples of x,y,z
+        x,y,z = self.RA_DEC_to_xyz(self.tra,self.tdec)
+        # make a tree using cKDTree method
+        tree = spatial.cKDTree(np.c_[x,y,z])
+        return tree
+
+    # write a function that takes arrays of ra,dec coordinates
+    # and returns the neighbour object&#39;s indices from the tree
+    # within some distance `rmax` arcsec .
+
+    def query_within_rmax(self, ra, dec, rmax=15, units=&quot;deg&quot;):
+        print(f&quot;Searching for {ra.size} number of objects in the catalog with rmax={rmax} arcsec.&quot;)
+        #convert rmax from arcsec to distance units
+        rmax = self.r *rmax *self.arcsec_to_rad
+
+        # array of tuples of x,y,z of input objetcs
+        x,y,z = self.RA_DEC_to_xyz(ra,dec)
+        cartesian_coords = np.c_[x,y,z]
+
+        # make tree from catalog
+        tree = self.create_tree()
+
+        # look for the neighbour objects
+        ids_into_tree = tree.query_ball_point(cartesian_coords,rmax)
+
+        return ids_into_tree
+</pre></div>
+</div>
+</div>
+<section id="A-sanity-check">
+<h3>A sanity check<a class="headerlink" href="#A-sanity-check" title="Link to this heading"></a></h3>
+<p>Testing conversion of (ra,dec) to (x,y,z)</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[51]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Here we are not passing `tra` and `tdec` while initialising the class `find_neighbours`
+# So these variables take default values of `None`.
+# We only want to test the coordinate conversion code `RA_DEC_to_xyz`. So it&#39;s ok to not
+# pass `tra`,`tdec`!
+
+code = find_neighbours()
+
+# a look at the cartesian coordinates
+x,y,z = code.RA_DEC_to_xyz(coords[:,0], coords[:,1])
+cartesian_coords = np.c_[x,y,z]
+
+print(&quot;shapes of x,y,z arrays:&quot;,x.shape,y.shape,z.shape)
+print(&quot;shapes of (x,y,z) tuple array:&quot;, cartesian_coords.shape)
+#field on objects looks close to equator
+cartesian_coords
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Initializing with sphere of radius, r=1.
+shapes of x,y,z arrays: (220622,) (220622,) (220622,)
+shapes of (x,y,z) tuple array: (220622, 3)
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[51]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([[ 0.8553461 ,  0.50608675, -0.11072151],
+       [ 0.85536537,  0.50607894, -0.11060828],
+       [ 0.85549871,  0.50586954, -0.11053492],
+       ...,
+       [ 0.78796508,  0.6142163 , -0.04300421],
+       [ 0.78737094,  0.61497898, -0.04298683],
+       [ 0.78774839,  0.61449982, -0.04292369]])
+</pre></div></div>
+</div>
+</section>
+<section id="Compare-the-output-of-our-brute-force-algorithm-with-cKDTree-algorithm-on-dew-Demo-objects">
+<h3>Compare the output of our brute force algorithm with cKDTree algorithm on dew Demo objects<a class="headerlink" href="#Compare-the-output-of-our-brute-force-algorithm-with-cKDTree-algorithm-on-dew-Demo-objects" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title fa fa-exclamation-circle">Exercise:</p>
+<ul>
+<li><p>Take the same bunch of objects for which we already have run our brute force search method,</p>
+<p>feed them into the wrapper code of k-d tree written above,</p>
+<p>find out their neighbour points within the same <code class="docutils literal notranslate"><span class="pre">rmax</span></code>(default value)=15 arcsec.</p>
+<p>The neighbour objects found from both the methods should match!</p>
+</li>
+</ul>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[52]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>demo_ids = [15] #9,15
+demo_ra =coords[demo_ids,0] #deg
+demo_dec=coords[demo_ids,1] #deg
+
+demox, demoy, demoz = code.RA_DEC_to_xyz(demo_ra, demo_dec)
+demoobj = np.c_[demox,demoy,demoz]
+print(&quot;&quot;&quot;I had chosen following indices from set2(catalog) as my test objects:&quot;&quot;&quot;,demo_ids)
+print(&quot;coordinate of test objects:&quot;,demoobj)
+
+# we want to look within `rmax` arcsec --&gt; convert `rmax` from (arcsec) angle to length units
+
+# rmax = 15
+# print()
+# print(f&quot;rmax={rmax} arcsec in radians ---&gt;&quot;,rmax* arcsec_to_rad)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+I had chosen following indices from set2(catalog) as my test objects: [15]
+coordinate of test objects: [[ 0.85581232  0.50543305 -0.11010311]]
+</pre></div></div>
+</div>
+<p># This time Initialize class with by passing <code class="docutils literal notranslate"><span class="pre">tra</span></code> and <code class="docutils literal notranslate"><span class="pre">tdec</span></code> arguments and set up the tree</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>code_tree = find_neighbours(tra=coords[:,0], tdec=coords[:,1])
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Initializing with sphere of radius, r=1.
+</pre></div></div>
+</div>
+<p># Query the neighbours of demo objects</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[54]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>idx=code_tree.query_within_rmax(demo_ra, demo_dec)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Searching for 1 number of objects in the catalog with rmax=15 arcsec.
+</pre></div></div>
+</div>
+<p># Go back to brute force output and compare this result…. does it match?</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[55]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>idx
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[55]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([list([14, 15, 16, 44])], dtype=object)
+</pre></div></div>
+</div>
+</section>
+</section>
+<section id="Compare-the-computer-time-required-by-our-brute-force-algorithm-vs-the-k-d-tree-algorithm">
+<h2>Compare the computer time required by our brute force algorithm vs the k-d tree algorithm<a class="headerlink" href="#Compare-the-computer-time-required-by-our-brute-force-algorithm-vs-the-k-d-tree-algorithm" title="Link to this heading"></a></h2>
+<p>First let’s use k-d tree to query neighbours within <code class="docutils literal notranslate"><span class="pre">rmax</span></code>=15 arcsec for each object within the catalog.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[56]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%time idx=code_tree.query_within_rmax(coords[:,0], coords[:,1])
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Searching for 220622 number of objects in the catalog with rmax=15 arcsec.
+CPU times: user 1.89 s, sys: 90.9 ms, total: 1.98 s
+Wall time: 1.97 s
+</pre></div></div>
+</div>
+<p>Reminder: full catalog has about 2,20,000 objects… and k-d tree found neighbours for each one of them in 1-2 seconds. (This time will vary depending on your computer’s ability.)</p>
+<p>Now let’s use the brute force method only for 1000 objects.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[57]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%time nnids,distances = query_neighbour_points(coords[:1000], coords[:1000], rmax=15, verbose=False)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+CPU times: user 1min 47s, sys: 348 ms, total: 1min 47s
+Wall time: 1min 47s
+</pre></div></div>
+</div>
+<p>You will notice that as the number of points to search for increases in <code class="docutils literal notranslate"><span class="pre">set1</span></code>, the performance of the k-d tree algorithm will keep on improving over the brute force method.</p>
+<p>That’s just because the time required by k-d tree will grow as <span class="math notranslate nohighlight">\(\sim \mathcal{O}(n_1\log{n_2})\)</span> where as that of brute force will grow as <span class="math notranslate nohighlight">\(\sim n_1 n_2\)</span>.</p>
+</section>
+<section id="Congratulations!-Now-you-have-learnt-to--">
+<h2>Congratulations! Now you have learnt to -<a class="headerlink" href="#Congratulations!-Now-you-have-learnt-to--" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>use <code class="docutils literal notranslate"><span class="pre">cKDTree</span></code> to find out neighbours of a given <code class="docutils literal notranslate"><span class="pre">set1</span></code> of objects into some other <code class="docutils literal notranslate"><span class="pre">set2</span></code> of objects.</p></li>
+<li><p>count the number of neighbours of any given object in <code class="docutils literal notranslate"><span class="pre">set1</span></code>.</p></li>
+<li><p>access the results of cKDTree and identify neighbours of each obejct in <code class="docutils literal notranslate"><span class="pre">set1</span></code> into the <code class="docutils literal notranslate"><span class="pre">set2</span></code>.</p></li>
+<li><p>access the coordinates and distances of each neighbour of every point in <code class="docutils literal notranslate"><span class="pre">set1</span></code>.</p></li>
+</ul>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Divya Rana and Navin Chaurasiya.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
