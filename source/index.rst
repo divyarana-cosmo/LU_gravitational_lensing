@@ -17,7 +17,7 @@ These notes are present to aid the content covered by Divya Rana in weak gravita
    :maxdepth: 2
    :caption: Contents:
 
-   astrotwin_day_1_hands_on 
+   lu_notebook_1 
 
 ..  solutions_astrotwin_day_1_hands_on
 ..  astrotwin_day_2_hands_on
