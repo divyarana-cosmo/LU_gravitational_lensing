@@ -20,8 +20,7 @@ These notes are present to aid the content covered by Divya Rana in weak gravita
    lu_notebook_1 
    solutions_lu_1
    lu_notebook_2
+   solutions_lu_2
    lu_notebook_3
-.. solutions_lu_1
-.. solutions_lu_2
-.. solutions_lu_3
+   solutions_lu_3
 
